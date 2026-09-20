@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+}
+
+header {
+    background-color: navy;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+main {
+    width: 80%;
+    margin: 20px auto;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h2 {
+    color: navy;
+}
+
+h3 {
+    color: #305f8d;
+}
+
+li {
+    margin: 6px 0;
+}
+
+a {
+    color: #0056b3;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+footer {
+    background-color: #17365d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
