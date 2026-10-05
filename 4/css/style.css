@@ -1,4 +1,4 @@
-/* BASIC PAGE STYLES */
+/* Basic Page Styles */
 
 * {
     box-sizing: border-box;
@@ -22,7 +22,7 @@ a {
 }
 
 
-/* NAVIGATION */
+/* Navigation */
 
 .site-header {
     background-color: #102a1e;
@@ -33,7 +33,6 @@ a {
     max-width: 1200px;
     margin: auto;
     padding: 18px 20px;
-
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -50,7 +49,6 @@ a {
     list-style: none;
     margin: 0;
     padding: 0;
-
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -60,9 +58,7 @@ a {
     display: block;
     color: white;
     text-decoration: none;
-
     padding: 8px 12px;
-
     border-radius: 6px;
 }
 
@@ -77,7 +73,7 @@ a {
 }
 
 
-/* ACCESSIBILITY FOCUS */
+/* Accessibility Focus */
 
 .nav-links a:focus-visible,
 .logo:focus-visible,
@@ -89,66 +85,54 @@ a {
 }
 
 
-/* HOME PAGE - HERO */
+/* Home Page Hero */
 
 .hero {
     max-width: 1200px;
     margin: auto;
     padding: 50px 20px;
-
     display: grid;
     gap: 35px;
-
     align-items: center;
 }
 
 .eyebrow {
     color: #24724b;
-
     font-size: 0.9rem;
     font-weight: bold;
-
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
 
 .hero h1 {
     margin: 8px 0 15px;
-
     font-size: 2.4rem;
     line-height: 1.1;
 }
 
 .hero-text {
     max-width: 650px;
-
     margin-bottom: 28px;
-
     font-size: 1.05rem;
 }
 
 .hero-image img {
     width: 100%;
     height: 300px;
-
     object-fit: cover;
-
     border-radius: 16px;
 }
 
 
-/* BUTTONS */
+/* Buttons */
 
 .primary-button,
 .secondary-button,
 .back-button {
     display: inline-block;
-
     padding: 12px 22px;
-
     font-weight: bold;
     text-decoration: none;
-
     border-radius: 8px;
 
     transition:
@@ -182,52 +166,44 @@ a {
 }
 
 
-/* HOME PAGE - INTRODUCTION */
+/* Home Page Introduction */
 
 .introduction {
     max-width: 800px;
-
     margin: auto;
     padding: 50px 20px;
-
     text-align: center;
 }
 
 .introduction h2,
 .section-heading h2 {
     margin-top: 5px;
-
     font-size: 2rem;
 }
 
 
-/* HOME PAGE - FEATURES */
+/* Home Page Features */
 
 .discover {
     max-width: 1200px;
-
     margin: auto;
     padding: 50px 20px;
 }
 
 .section-heading {
     margin-bottom: 30px;
-
     text-align: center;
 }
 
 .feature-grid {
     display: grid;
     grid-template-columns: 1fr;
-
     gap: 20px;
 }
 
 .feature-card {
     padding: 28px;
-
     background-color: white;
-
     border: 1px solid #dbe4df;
     border-radius: 12px;
 }
@@ -245,44 +221,37 @@ a {
 }
 
 
-/* HOME PAGE - CALL TO ACTION */
+/* Home Page Call to Action */
 
 .explore-callout {
     padding: 55px 20px;
-
     background-color: #24724b;
     color: white;
-
     text-align: center;
 }
 
 .explore-callout h2 {
     margin-top: 0;
-
     font-size: 2rem;
 }
 
 
-/* TWO-STEP EXPLORER Used for country selection AND club selection */
+/* Two-Step Explorer */
 
 .choice-section {
     max-width: 1100px;
-
     margin: auto;
     padding: 70px 20px;
 }
 
 .choice-heading {
     max-width: 700px;
-
     margin: 0 auto 45px;
-
     text-align: center;
 }
 
 .choice-heading h1 {
     margin: 5px 0 15px;
-
     font-size: 2.5rem;
     line-height: 1.2;
 }
@@ -293,26 +262,22 @@ a {
 }
 
 
-/* COUNTRY GRID */
+/* Country Grid */
 
 .country-grid {
     display: grid;
     grid-template-columns: 1fr;
-
     gap: 25px;
 }
 
 
-/* COUNTRY CARDS */
+/* Country Cards */
 
 .country-card {
     position: relative;
-
     display: flex;
     align-items: flex-end;
-
     min-height: 280px;
-
     padding: 0;
 
     background-position: center;
@@ -324,7 +289,6 @@ a {
 
     border: 2px solid transparent;
     border-radius: 16px;
-
     overflow: hidden;
 
     transition:
@@ -333,56 +297,40 @@ a {
         border-color 0.25s ease;
 }
 
-
-/* Dark overlay over country flag */
-
 .country-card::before {
     content: "";
-
     position: absolute;
     inset: 0;
-
     background-color: rgba(0, 0, 0, 0.48);
-
     transition: background-color 0.25s ease;
 }
-
-
-/* Text above overlay */
 
 .country-card-content {
     position: relative;
     z-index: 1;
-
     width: 100%;
-
     padding: 30px;
 }
 
 .country-card h2 {
     margin: 0 0 8px;
-
     color: white;
-
     font-size: 2rem;
 }
 
 .country-card p {
     max-width: 420px;
-
     margin: 0 0 18px;
-
     color: white;
 }
 
 .country-card .card-link {
     color: white;
-
     font-weight: bold;
 }
 
 
-/* COUNTRY FLAG BACKGROUNDS */
+/* Country Flag Backgrounds */
 
 .england-card {
     background-image: url("../img/england-flag.jpg");
@@ -401,13 +349,11 @@ a {
 }
 
 
-/* COUNTRY CARD EFFECTS */
+/* Country Card Effects */
 
 .country-card:hover {
     transform: translateY(-6px);
-
     border-color: #24724b;
-
     box-shadow: 0 12px 28px rgba(16, 42, 30, 0.22);
 }
 
@@ -421,34 +367,25 @@ a {
 }
 
 
-/* CLUB SELECTION */
+/* Club Selection */
 
 .club-grid {
     display: grid;
     grid-template-columns: 1fr;
-
     gap: 25px;
 }
 
 
-/* CLUB CARDS */
+/* Club Cards */
 
 .club-card {
     position: relative;
-
     display: flex;
     align-items: flex-end;
-
     min-height: 280px;
-
     padding: 0;
 
     background-color: white;
-
-    /*
-       contain works better for badges/logos because
-       it prevents the club badge from being cropped.
-    */
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -458,7 +395,6 @@ a {
 
     border: 2px solid #dbe4df;
     border-radius: 16px;
-
     overflow: hidden;
 
     transition:
@@ -467,15 +403,8 @@ a {
         border-color 0.25s ease;
 }
 
-
-/*
-   Gradient keeps the badge visible while making
-   the club name readable at the bottom.
-*/
-
 .club-card::before {
     content: "";
-
     position: absolute;
     inset: 0;
 
@@ -489,39 +418,32 @@ a {
     transition: background 0.25s ease;
 }
 
-
 .club-card-content {
     position: relative;
     z-index: 1;
-
     width: 100%;
-
     padding: 30px;
 }
 
 .club-card h2 {
     margin: 0 0 8px;
-
     color: white;
-
     font-size: 1.8rem;
     line-height: 1.2;
 }
 
 .club-card p {
     margin: 0 0 12px;
-
     color: white;
 }
 
 .club-card .card-link {
     color: white;
-
     font-weight: bold;
 }
 
 
-/* ENGLAND CLUB BADGES */
+/* England Club Badges */
 
 .manchester-united-card {
     background-image: url("../img/manchester-united.png");
@@ -540,7 +462,7 @@ a {
 }
 
 
-/* SPAIN CLUB BADGES */
+/* Spain Club Badges */
 
 .real-madrid-card {
     background-image: url("../img/real-madrid.png");
@@ -559,7 +481,7 @@ a {
 }
 
 
-/* GERMANY CLUB BADGES */
+/* Germany Club Badges */
 
 .bayern-munich-card {
     background-image: url("../img/bayern-munich.png");
@@ -578,7 +500,7 @@ a {
 }
 
 
-/* ITALY CLUB BADGES */
+/* Italy Club Badges */
 
 .juventus-card {
     background-image: url("../img/juventus.png");
@@ -597,13 +519,11 @@ a {
 }
 
 
-/* CLUB CARD EFFECTS */
+/* Club Card Effects */
 
 .club-card:hover {
     transform: translateY(-6px);
-
     border-color: #24724b;
-
     box-shadow: 0 12px 28px rgba(16, 42, 30, 0.22);
 }
 
@@ -622,18 +542,14 @@ a {
 }
 
 
-/* BACK NAVIGATION */
+/* Step Navigation */
 
 .step-navigation {
     display: flex;
     flex-direction: column;
-
     align-items: center;
-
     gap: 15px;
-
     margin-top: 40px;
-
     text-align: center;
 }
 
@@ -642,19 +558,14 @@ a {
 }
 
 
-/* HOW IT WORKS */
+/* How It Works */
 
 .navigation-help {
     max-width: 800px;
-
     margin: 0 auto 70px;
-
     padding: 35px;
-
     background-color: #e8f0eb;
-
     border-radius: 14px;
-
     text-align: center;
 }
 
@@ -663,14 +574,148 @@ a {
 }
 
 
-/* FOOTER */
+/* Final Club Information Pages */
+
+
+/* Club Page Heading */
+
+.club-hero {
+    max-width: 900px;
+    margin: auto;
+    padding: 65px 20px 35px;
+    text-align: center;
+}
+
+.club-hero h1 {
+    margin: 5px 0 15px;
+    font-size: 2.7rem;
+    line-height: 1.1;
+}
+
+.club-subtitle {
+    max-width: 650px;
+    margin: auto;
+    font-size: 1.05rem;
+}
+
+
+/* Club Story */
+
+.club-story {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 20px 60px;
+}
+
+.story-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+.story-row:last-child {
+    margin-bottom: 0;
+}
+
+.story-text h2 {
+    margin: 5px 0 15px;
+    font-size: 2rem;
+}
+
+.story-text p:last-child {
+    margin-bottom: 0;
+}
+
+.story-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+
+/* Club Information */
+
+.club-information {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.fact-card {
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #dbe4df;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.fact-card h3 {
+    margin: 0 0 8px;
+    color: #24724b;
+}
+
+.fact-card p {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+
+/* Achievements */
+
+.achievements-section {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px 70px;
+}
+
+.achievements-card {
+    padding: 30px;
+    background-color: #e8f0eb;
+    border-radius: 14px;
+}
+
+.achievements-card ul {
+    margin: 0;
+    padding-left: 25px;
+}
+
+.achievements-card li {
+    margin-bottom: 12px;
+}
+
+.achievements-card li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Club Page Navigation */
+
+.club-navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px 70px;
+}
+
+
+/* Footer */
 
 .site-footer {
     padding: 20px;
-
     background-color: #102a1e;
     color: white;
-
     text-align: center;
 }
 
@@ -679,21 +724,15 @@ a {
 }
 
 
-/* TABLET 700px AND LARGER*/
+/* Tablet - 700px and Larger */
 
 @media (min-width: 700px) {
 
-    /* Navigation */
-
     .navbar {
         flex-direction: row;
-
         justify-content: space-between;
         align-items: center;
     }
-
-
-    /* Home Page */
 
     .feature-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -703,9 +742,6 @@ a {
         font-size: 3rem;
     }
 
-
-    /* Country Selection */
-
     .country-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -713,9 +749,6 @@ a {
     .country-card {
         min-height: 310px;
     }
-
-
-    /* Club Selection */
 
     .club-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -725,33 +758,54 @@ a {
         min-height: 310px;
     }
 
-
-    /* Heading */
-
     .choice-heading h1 {
         font-size: 3rem;
     }
 
-
-    /* Back Navigation */
-
     .step-navigation {
         flex-direction: row;
-
         justify-content: center;
+    }
+
+    .club-hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .story-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .story-row-reverse .story-image {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .story-row-reverse .story-text {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .story-image img {
+        height: 350px;
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .club-navigation {
+        flex-direction: row;
     }
 }
 
 
-/* DESKTOP 1000px AND LARGER */
+/* Desktop - 1000px and Larger */
 
 @media (min-width: 1000px) {
 
-    /* Home Page */
-
     .hero {
         grid-template-columns: 1.1fr 0.9fr;
-
         min-height: 600px;
     }
 
@@ -767,16 +821,10 @@ a {
         grid-template-columns: repeat(4, 1fr);
     }
 
-
-    /* Two-Step Explorer */
-
     .choice-section {
         padding-top: 90px;
         padding-bottom: 90px;
     }
-
-
-    /* Country Cards */
 
     .country-card {
         min-height: 340px;
@@ -786,14 +834,38 @@ a {
         padding: 38px;
     }
 
-
-    /* Club Cards */
-
     .club-card {
         min-height: 340px;
     }
 
     .club-card-content {
         padding: 38px;
+    }
+
+    .club-hero {
+        padding-top: 90px;
+        padding-bottom: 50px;
+    }
+
+    .club-hero h1 {
+        font-size: 4rem;
+    }
+
+    .story-row {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+        margin-bottom: 90px;
+    }
+
+    .story-row-reverse {
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .story-image img {
+        height: 400px;
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
