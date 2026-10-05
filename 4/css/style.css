@@ -1,0 +1,278 @@
+/*BASIC PAGE STYLES*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7f6;
+    color: #17221c;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+
+/*NAVIGATION*/
+
+.site-header {
+    background-color: #102a1e;
+    color: white;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.logo {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    background-color: #24563d;
+}
+
+.nav-links a.active {
+    background-color: #ffffff;
+    color: #102a1e;
+}
+
+
+/*HERO*/
+
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+
+    display: grid;
+    gap: 35px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: #24724b;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    margin: 8px 0 15px;
+    font-size: 2.4rem;
+    line-height: 1.1;
+}
+
+.hero-text {
+    max-width: 650px;
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+
+/*BUTTONS*/
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 12px 22px;
+    transition: transform 0.2s ease;
+}
+
+.primary-button {
+    background-color: #24724b;
+    color: white;
+}
+
+.secondary-button {
+    background-color: white;
+    color: #102a1e;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+    transform: translateY(-2px);
+}
+
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.nav-links a:focus-visible,
+.logo:focus-visible {
+    outline: 3px solid #e6b94a;
+    outline-offset: 3px;
+}
+
+
+/*INTRODUCTION*/
+
+.introduction {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.introduction h2,
+.section-heading h2 {
+    margin-top: 5px;
+    font-size: 2rem;
+}
+
+
+/*FEATURES*/
+
+.discover {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #dbe4df;
+}
+
+.feature-card h3 {
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    margin-bottom: 0;
+}
+
+.feature-icon {
+    font-size: 2rem;
+}
+
+
+/*CALL TO ACTION*/
+
+.explore-callout {
+    background-color: #24724b;
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.explore-callout h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+
+/*FOOTER*/
+
+.site-footer {
+    background-color: #102a1e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+
+/*TABLET*/
+
+@media (min-width: 700px) {
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
+
+
+/*DESKTOP*/
+
+@media (min-width: 1000px) {
+
+    .hero {
+        grid-template-columns: 1.1fr 0.9fr;
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero-image img {
+        height: 430px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
