@@ -1,4 +1,4 @@
-/*BASIC PAGE STYLES*/
+/* BASIC PAGE STYLES */
 
 * {
     box-sizing: border-box;
@@ -22,7 +22,7 @@ a {
 }
 
 
-/*NAVIGATION*/
+/* NAVIGATION */
 
 .site-header {
     background-color: #102a1e;
@@ -60,7 +60,9 @@ a {
     display: block;
     color: white;
     text-decoration: none;
+
     padding: 8px 12px;
+
     border-radius: 6px;
 }
 
@@ -70,12 +72,24 @@ a {
 }
 
 .nav-links a.active {
-    background-color: #ffffff;
+    background-color: white;
     color: #102a1e;
 }
 
 
-/*HERO*/
+/* ACCESSIBILITY FOCUS */
+
+.nav-links a:focus-visible,
+.logo:focus-visible,
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.back-button:focus-visible {
+    outline: 3px solid #e6b94a;
+    outline-offset: 3px;
+}
+
+
+/* HOME PAGE - HERO */
 
 .hero {
     max-width: 1200px;
@@ -84,47 +98,62 @@ a {
 
     display: grid;
     gap: 35px;
+
     align-items: center;
 }
 
 .eyebrow {
     color: #24724b;
+
     font-size: 0.9rem;
     font-weight: bold;
+
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
 
 .hero h1 {
     margin: 8px 0 15px;
+
     font-size: 2.4rem;
     line-height: 1.1;
 }
 
 .hero-text {
     max-width: 650px;
-    font-size: 1.05rem;
+
     margin-bottom: 28px;
+
+    font-size: 1.05rem;
 }
 
 .hero-image img {
     width: 100%;
     height: 300px;
+
     object-fit: cover;
+
     border-radius: 16px;
 }
 
 
-/*BUTTONS*/
+/* BUTTONS */
 
 .primary-button,
-.secondary-button {
+.secondary-button,
+.back-button {
     display: inline-block;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
+
     padding: 12px 22px;
-    transition: transform 0.2s ease;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
 }
 
 .primary-button {
@@ -137,60 +166,70 @@ a {
     color: #102a1e;
 }
 
+.back-button {
+    background-color: #102a1e;
+    color: white;
+}
+
 .primary-button:hover,
-.secondary-button:hover {
+.secondary-button:hover,
+.back-button:hover {
     transform: translateY(-2px);
 }
 
-.primary-button:focus-visible,
-.secondary-button:focus-visible,
-.nav-links a:focus-visible,
-.logo:focus-visible {
-    outline: 3px solid #e6b94a;
-    outline-offset: 3px;
+.back-button:hover {
+    background-color: #24724b;
 }
 
 
-/*INTRODUCTION*/
+/* HOME PAGE - INTRODUCTION */
 
 .introduction {
     max-width: 800px;
+
     margin: auto;
     padding: 50px 20px;
+
     text-align: center;
 }
 
 .introduction h2,
 .section-heading h2 {
     margin-top: 5px;
+
     font-size: 2rem;
 }
 
 
-/*FEATURES*/
+/* HOME PAGE - FEATURES */
 
 .discover {
     max-width: 1200px;
+
     margin: auto;
     padding: 50px 20px;
 }
 
 .section-heading {
-    text-align: center;
     margin-bottom: 30px;
+
+    text-align: center;
 }
 
 .feature-grid {
     display: grid;
     grid-template-columns: 1fr;
+
     gap: 20px;
 }
 
 .feature-card {
-    background-color: white;
     padding: 28px;
-    border-radius: 12px;
+
+    background-color: white;
+
     border: 1px solid #dbe4df;
+    border-radius: 12px;
 }
 
 .feature-card h3 {
@@ -206,28 +245,433 @@ a {
 }
 
 
-/*CALL TO ACTION*/
+/* HOME PAGE - CALL TO ACTION */
 
 .explore-callout {
+    padding: 55px 20px;
+
     background-color: #24724b;
     color: white;
+
     text-align: center;
-    padding: 55px 20px;
 }
 
 .explore-callout h2 {
     margin-top: 0;
+
     font-size: 2rem;
 }
 
 
-/*FOOTER*/
+/* TWO-STEP EXPLORER Used for country selection AND club selection */
+
+.choice-section {
+    max-width: 1100px;
+
+    margin: auto;
+    padding: 70px 20px;
+}
+
+.choice-heading {
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.choice-heading h1 {
+    margin: 5px 0 15px;
+
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.choice-heading p:last-child {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* COUNTRY GRID */
+
+.country-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+}
+
+
+/* COUNTRY CARDS */
+
+.country-card {
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+
+    min-height: 280px;
+
+    padding: 0;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: white;
+    text-decoration: none;
+
+    border: 2px solid transparent;
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Dark overlay over country flag */
+
+.country-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.48);
+
+    transition: background-color 0.25s ease;
+}
+
+
+/* Text above overlay */
+
+.country-card-content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    padding: 30px;
+}
+
+.country-card h2 {
+    margin: 0 0 8px;
+
+    color: white;
+
+    font-size: 2rem;
+}
+
+.country-card p {
+    max-width: 420px;
+
+    margin: 0 0 18px;
+
+    color: white;
+}
+
+.country-card .card-link {
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* COUNTRY FLAG BACKGROUNDS */
+
+.england-card {
+    background-image: url("../img/england-flag.jpg");
+}
+
+.spain-card {
+    background-image: url("../img/spain-flag.jpg");
+}
+
+.germany-card {
+    background-image: url("../img/germany-flag.jpg");
+}
+
+.italy-card {
+    background-image: url("../img/italy-flag.jpg");
+}
+
+
+/* COUNTRY CARD EFFECTS */
+
+.country-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #24724b;
+
+    box-shadow: 0 12px 28px rgba(16, 42, 30, 0.22);
+}
+
+.country-card:hover::before {
+    background-color: rgba(0, 0, 0, 0.30);
+}
+
+.country-card:focus-visible {
+    outline: 4px solid #e6b94a;
+    outline-offset: 4px;
+}
+
+
+/* CLUB SELECTION */
+
+.club-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+}
+
+
+/* CLUB CARDS */
+
+.club-card {
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+
+    min-height: 280px;
+
+    padding: 0;
+
+    background-color: white;
+
+    /*
+       contain works better for badges/logos because
+       it prevents the club badge from being cropped.
+    */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    color: white;
+    text-decoration: none;
+
+    border: 2px solid #dbe4df;
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/*
+   Gradient keeps the badge visible while making
+   the club name readable at the bottom.
+*/
+
+.club-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05) 25%,
+            rgba(0, 0, 0, 0.80) 100%
+        );
+
+    transition: background 0.25s ease;
+}
+
+
+.club-card-content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    padding: 30px;
+}
+
+.club-card h2 {
+    margin: 0 0 8px;
+
+    color: white;
+
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.club-card p {
+    margin: 0 0 12px;
+
+    color: white;
+}
+
+.club-card .card-link {
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* ENGLAND CLUB BADGES */
+
+.manchester-united-card {
+    background-image: url("../img/manchester-united.png");
+}
+
+.manchester-city-card {
+    background-image: url("../img/manchester-city.png");
+}
+
+.liverpool-card {
+    background-image: url("../img/liverpool.png");
+}
+
+.arsenal-card {
+    background-image: url("../img/arsenal.png");
+}
+
+
+/* SPAIN CLUB BADGES */
+
+.real-madrid-card {
+    background-image: url("../img/real-madrid.png");
+}
+
+.barcelona-card {
+    background-image: url("../img/barcelona.png");
+}
+
+.atletico-madrid-card {
+    background-image: url("../img/atletico-madrid.png");
+}
+
+.athletic-bilbao-card {
+    background-image: url("../img/athletic-bilbao.png");
+}
+
+
+/* GERMANY CLUB BADGES */
+
+.bayern-munich-card {
+    background-image: url("../img/bayern-munich.png");
+}
+
+.dortmund-card {
+    background-image: url("../img/dortmund.png");
+}
+
+.stuttgart-card {
+    background-image: url("../img/stuttgart.png");
+}
+
+.monchengladbach-card {
+    background-image: url("../img/monchengladbach.png");
+}
+
+
+/* ITALY CLUB BADGES */
+
+.juventus-card {
+    background-image: url("../img/juventus.png");
+}
+
+.inter-milan-card {
+    background-image: url("../img/inter-milan.png");
+}
+
+.ac-milan-card {
+    background-image: url("../img/ac-milan.png");
+}
+
+.genoa-card {
+    background-image: url("../img/genoa.png");
+}
+
+
+/* CLUB CARD EFFECTS */
+
+.club-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #24724b;
+
+    box-shadow: 0 12px 28px rgba(16, 42, 30, 0.22);
+}
+
+.club-card:hover::before {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 25%,
+            rgba(0, 0, 0, 0.70) 100%
+        );
+}
+
+.club-card:focus-visible {
+    outline: 4px solid #e6b94a;
+    outline-offset: 4px;
+}
+
+
+/* BACK NAVIGATION */
+
+.step-navigation {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+.step-navigation p {
+    margin: 0;
+}
+
+
+/* HOW IT WORKS */
+
+.navigation-help {
+    max-width: 800px;
+
+    margin: 0 auto 70px;
+
+    padding: 35px;
+
+    background-color: #e8f0eb;
+
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+.navigation-help h2 {
+    margin-top: 0;
+}
+
+
+/* FOOTER */
 
 .site-footer {
+    padding: 20px;
+
     background-color: #102a1e;
     color: white;
+
     text-align: center;
-    padding: 20px;
 }
 
 .site-footer p {
@@ -235,15 +679,21 @@ a {
 }
 
 
-/*TABLET*/
+/* TABLET 700px AND LARGER*/
 
 @media (min-width: 700px) {
 
+    /* Navigation */
+
     .navbar {
         flex-direction: row;
+
         justify-content: space-between;
         align-items: center;
     }
+
+
+    /* Home Page */
 
     .feature-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -252,15 +702,56 @@ a {
     .hero h1 {
         font-size: 3rem;
     }
+
+
+    /* Country Selection */
+
+    .country-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .country-card {
+        min-height: 310px;
+    }
+
+
+    /* Club Selection */
+
+    .club-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .club-card {
+        min-height: 310px;
+    }
+
+
+    /* Heading */
+
+    .choice-heading h1 {
+        font-size: 3rem;
+    }
+
+
+    /* Back Navigation */
+
+    .step-navigation {
+        flex-direction: row;
+
+        justify-content: center;
+    }
 }
 
 
-/*DESKTOP*/
+/* DESKTOP 1000px AND LARGER */
 
 @media (min-width: 1000px) {
 
+    /* Home Page */
+
     .hero {
         grid-template-columns: 1.1fr 0.9fr;
+
         min-height: 600px;
     }
 
@@ -274,5 +765,35 @@ a {
 
     .feature-grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+
+    /* Two-Step Explorer */
+
+    .choice-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+
+    /* Country Cards */
+
+    .country-card {
+        min-height: 340px;
+    }
+
+    .country-card-content {
+        padding: 38px;
+    }
+
+
+    /* Club Cards */
+
+    .club-card {
+        min-height: 340px;
+    }
+
+    .club-card-content {
+        padding: 38px;
     }
 }
