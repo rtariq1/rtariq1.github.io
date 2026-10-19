@@ -1,0 +1,818 @@
+{
+    "countries": [
+        {
+            "id": "england",
+            "name": "England",
+            "flag": "img/england-flag.jpg",
+            "description": "Explore four popular clubs from English soccer.",
+            "clubs": [
+                {
+                    "id": "manchester-united",
+                    "name": "Manchester United",
+                    "city": "Manchester",
+                    "country": "England",
+                    "founded": 1878,
+                    "stadium": "Old Trafford",
+                    "colors": "Red, White, and Black",
+                    "stadiumImage": "img/manchester-united-stadium.jpg",
+                    "teamImage": "img/manchester-united-team.jpg",
+                    "introduction": [
+                        "Manchester United is one of the most famous soccer clubs in the world. The club is based in Manchester, England, and plays its home matches at Old Trafford.",
+                        "The club is known for its red shirts, large worldwide fan base, and long history of success in English and European soccer.",
+                        "Manchester United has been represented by many legendary players throughout its history, including Bobby Charlton, George Best, Eric Cantona, David Beckham, Wayne Rooney, and Cristiano Ronaldo.",
+                        "Old Trafford is one of the most recognizable soccer stadiums in England and is often called the Theatre of Dreams."
+                    ],
+                    "about": [
+                        "Manchester United was founded in 1878 as Newton Heath LYR Football Club by workers from the Lancashire and Yorkshire Railway.",
+                        "The club experienced financial problems before being reorganized and renamed Manchester United in 1902.",
+                        "Manchester United won its first English league championship in 1908 and its first FA Cup in 1909.",
+                        "Manager Matt Busby later created a talented young team known as the Busby Babes.",
+                        "Tragedy struck in 1958 when the Munich air disaster resulted in 23 deaths, including eight Manchester United players.",
+                        "Busby rebuilt the team after the disaster, and Manchester United became the first English club to win the European Cup in 1968.",
+                        "Another major period of success began after Alex Ferguson became manager in 1986. Under Ferguson, Manchester United became one of the dominant clubs in English soccer.",
+                        "The club completed a historic Treble in 1999 by winning the Premier League, FA Cup, and UEFA Champions League in the same season."
+                    ],
+                    "topScorer": {
+                        "name": "Wayne Rooney",
+                        "goals": 253
+                    },
+                    "trophies": [
+                        "20 English League Titles",
+                        "3 European Cup / UEFA Champions League Titles",
+                        "13 FA Cups",
+                        "6 League Cups",
+                        "1 UEFA Europa League"
+                    ],
+                    "ballonDor": [
+                        "Denis Law - 1964",
+                        "Bobby Charlton - 1966",
+                        "George Best - 1968",
+                        "Cristiano Ronaldo - 2008"
+                    ],
+                    "funFacts": [
+                        "The club was originally named Newton Heath LYR Football Club.",
+                        "Old Trafford is commonly known as the Theatre of Dreams.",
+                        "Manchester United became the first English club to win the European Cup in 1968.",
+                        "The club won the Premier League, FA Cup, and Champions League Treble in 1999."
+                    ]
+                },
+                {
+                    "id": "manchester-city",
+                    "name": "Manchester City",
+                    "city": "Manchester",
+                    "country": "England",
+                    "founded": 1880,
+                    "stadium": "Etihad Stadium",
+                    "colors": "Sky Blue and White",
+                    "stadiumImage": "img/manchester-city-stadium.jpg",
+                    "teamImage": "img/manchester-city-team.jpg",
+                    "introduction": [
+                        "Manchester City is a professional soccer club based in Manchester, England.",
+                        "The club is commonly known as City or the Citizens and is famous for its sky blue home shirts.",
+                        "Manchester City plays its home matches at the Etihad Stadium, where the club moved in 2003 after leaving Maine Road.",
+                        "The club has become one of the most successful teams in modern English soccer."
+                    ],
+                    "about": [
+                        "Manchester City traces its history to 1880, when the club began as St. Mark's.",
+                        "The organization later became Ardwick Association Football Club before adopting the Manchester City name in 1894.",
+                        "City won its first major trophy when it captured the FA Cup in 1904.",
+                        "The club enjoyed another successful period during the late 1960s and early 1970s.",
+                        "Manchester City later experienced difficult periods and fell as far as the third level of English soccer during the late 1990s.",
+                        "A dramatic playoff victory in 1999 helped the club begin its climb back through the English soccer system.",
+                        "The Abu Dhabi United Group purchased Manchester City in 2008, beginning a new period of major investment and success.",
+                        "Sergio Aguero scored one of the most famous goals in Premier League history in 2012 when City won the league title in the final moments of the season.",
+                        "Pep Guardiola became manager in 2016 and developed City into one of Europe's strongest teams.",
+                        "Manchester City completed a historic Treble during the 2022-23 season by winning the Premier League, FA Cup, and UEFA Champions League."
+                    ],
+                    "topScorer": {
+                        "name": "Sergio Aguero",
+                        "goals": 260
+                    },
+                    "trophies": [
+                        "10 English League Titles",
+                        "1 UEFA Champions League",
+                        "7 FA Cups",
+                        "8 League Cups",
+                        "1 UEFA Cup Winners' Cup"
+                    ],
+                    "ballonDor": [
+                        "Rodri - 2024"
+                    ],
+                    "funFacts": [
+                        "The club began as St. Mark's in 1880.",
+                        "Sergio Aguero's 2012 title-winning goal is one of the most famous moments in Premier League history.",
+                        "Manchester City completed the Treble in 2023.",
+                        "Manchester City and Manchester United compete in the Manchester derby."
+                    ]
+                },
+                {
+                    "id": "liverpool",
+                    "name": "Liverpool",
+                    "city": "Liverpool",
+                    "country": "England",
+                    "founded": 1892,
+                    "stadium": "Anfield",
+                    "colors": "Red",
+                    "stadiumImage": "img/liverpool-stadium.jpg",
+                    "teamImage": "img/liverpool-team.jpg",
+                    "introduction": [
+                        "Liverpool Football Club is one of England's most historic and successful soccer clubs.",
+                        "The club is based in Liverpool, England, and has played its home matches at Anfield since its founding.",
+                        "Liverpool is famous for its red colors, passionate supporters, and the Kop stand at Anfield.",
+                        "The song You'll Never Walk Alone has become one of the club's most recognizable traditions."
+                    ],
+                    "about": [
+                        "Liverpool was founded in 1892 following a disagreement involving Everton and Anfield owner John Houlding.",
+                        "The new club began playing at Anfield and quickly established itself in English soccer.",
+                        "Liverpool won its first English league championship in 1901.",
+                        "Bill Shankly became manager in 1959 and helped transform Liverpool into a major English and European power.",
+                        "Managers including Bob Paisley and Joe Fagan continued that success with numerous domestic and European trophies.",
+                        "The Hillsborough disaster in 1989 resulted in the deaths of 97 Liverpool supporters and remains an important part of the club's history.",
+                        "Liverpool produced one of the greatest Champions League comebacks in 2005 by recovering from a 3-0 halftime deficit against AC Milan and eventually winning the final.",
+                        "Under Jurgen Klopp, Liverpool won the Champions League in 2019 and later returned to the top of English soccer."
+                    ],
+                    "topScorer": {
+                        "name": "Ian Rush",
+                        "goals": 346
+                    },
+                    "trophies": [
+                        "20 English League Titles",
+                        "6 European Cup / UEFA Champions League Titles",
+                        "8 FA Cups",
+                        "10 League Cups",
+                        "3 UEFA Cup / Europa League Titles"
+                    ],
+                    "ballonDor": [
+                        "Michael Owen - 2001"
+                    ],
+                    "funFacts": [
+                        "Liverpool has played at Anfield since the club was founded.",
+                        "You'll Never Walk Alone is strongly associated with Liverpool supporters.",
+                        "Liverpool came back from 3-0 down in the 2005 Champions League final.",
+                        "Liverpool and Everton compete in the Merseyside derby."
+                    ]
+                },
+                {
+                    "id": "arsenal",
+                    "name": "Arsenal",
+                    "city": "London",
+                    "country": "England",
+                    "founded": 1886,
+                    "stadium": "Emirates Stadium",
+                    "colors": "Red and White",
+                    "stadiumImage": "img/arsenal-stadium.jpg",
+                    "teamImage": "img/arsenal-team.jpg",
+                    "introduction": [
+                        "Arsenal is one of the most famous soccer clubs in England and is based in North London.",
+                        "The club is known as the Gunners because of its historical connection to workers at the Royal Arsenal armaments factory.",
+                        "Arsenal plays its home matches at Emirates Stadium, where the club moved in 2006 after leaving Highbury.",
+                        "The club has a long history of success and has featured many famous players throughout different generations."
+                    ],
+                    "about": [
+                        "Arsenal was founded in 1886 by workers at the Royal Arsenal in Woolwich.",
+                        "The club used names including Dial Square and Royal Arsenal before eventually becoming Arsenal.",
+                        "Arsenal moved to Highbury in North London in 1913.",
+                        "During the 1930s, manager Herbert Chapman helped turn Arsenal into one of England's strongest clubs.",
+                        "One of Arsenal's most dramatic championships came in 1989 when Michael Thomas scored a late goal against Liverpool at Anfield to secure the league title.",
+                        "Arsene Wenger became manager in 1996 and changed the club through new training methods, tactics, and an attacking style of soccer.",
+                        "The 2003-04 Arsenal team completed the entire Premier League season without losing a match, earning the nickname the Invincibles.",
+                        "Arsenal moved from Highbury to Emirates Stadium in 2006."
+                    ],
+                    "topScorer": {
+                        "name": "Thierry Henry",
+                        "goals": 228
+                    },
+                    "trophies": [
+                        "13 English League Titles",
+                        "14 FA Cups",
+                        "2 League Cups",
+                        "1 European Cup Winners' Cup",
+                        "1 Inter-Cities Fairs Cup"
+                    ],
+                    "ballonDor": [
+                        "No men's Ballon d'Or winner while representing Arsenal."
+                    ],
+                    "funFacts": [
+                        "Arsenal's Gunners nickname comes from the club's connection to an armaments factory.",
+                        "Arsenal completed the 2003-04 Premier League season without losing a match.",
+                        "Arsenal has won a record 14 FA Cups.",
+                        "Arsenal and Tottenham compete in the North London derby.",
+                        "A statue of Thierry Henry stands outside Emirates Stadium."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "spain",
+            "name": "Spain",
+            "flag": "img/spain-flag.jpg",
+            "description": "Discover four popular clubs from Spanish soccer.",
+            "clubs": [
+                {
+                    "id": "real-madrid",
+                    "name": "Real Madrid",
+                    "city": "Madrid",
+                    "country": "Spain",
+                    "founded": 1902,
+                    "stadium": "Santiago Bernabeu",
+                    "colors": "White",
+                    "stadiumImage": "img/real-madrid-stadium.jpg",
+                    "teamImage": "img/real-madrid-team.jpg",
+                    "introduction": [
+                        "Real Madrid is one of the most successful and recognizable soccer clubs in the world.",
+                        "The club is based in Madrid, Spain, and is famous for its traditional all-white uniform.",
+                        "Real Madrid plays its home matches at the Santiago Bernabeu, one of the most famous stadiums in European soccer.",
+                        "The club has built its reputation through domestic success, European championships, and generations of world-famous players."
+                    ],
+                    "about": [
+                        "Real Madrid was officially founded in 1902 and quickly became an important club in Spanish soccer.",
+                        "The club received the royal title Real from King Alfonso XIII in 1920.",
+                        "Real Madrid became especially powerful during the 1950s, when stars such as Alfredo Di Stefano helped the club dominate European competition.",
+                        "The club won the first five editions of the European Cup from 1956 through 1960.",
+                        "Real Madrid has continued to attract many of the world's best players throughout its history.",
+                        "The Galacticos era featured stars such as Luis Figo, Zinedine Zidane, Ronaldo Nazario, David Beckham, and Roberto Carlos.",
+                        "Cristiano Ronaldo later became the club's all-time leading scorer while helping Real Madrid win multiple Champions League titles.",
+                        "Real Madrid remains closely associated with success in the UEFA Champions League."
+                    ],
+                    "topScorer": {
+                        "name": "Cristiano Ronaldo",
+                        "goals": 451
+                    },
+                    "trophies": [
+                        "36 La Liga Titles",
+                        "15 European Cup / UEFA Champions League Titles",
+                        "20 Copa del Rey Titles",
+                        "2 UEFA Cups",
+                        "5 FIFA Club World Cups"
+                    ],
+                    "ballonDor": [
+                        "Alfredo Di Stefano",
+                        "Raymond Kopa",
+                        "Luis Figo",
+                        "Ronaldo Nazario",
+                        "Fabio Cannavaro",
+                        "Cristiano Ronaldo",
+                        "Luka Modric",
+                        "Karim Benzema"
+                    ],
+                    "funFacts": [
+                        "Real Madrid traditionally plays in an all-white home uniform.",
+                        "The club won the first five European Cups.",
+                        "Real Madrid and Barcelona compete in El Clasico.",
+                        "Cristiano Ronaldo became the club's all-time leading scorer.",
+                        "The Santiago Bernabeu is named after a former Real Madrid player and president."
+                    ]
+                },
+                {
+                    "id": "barcelona",
+                    "name": "Barcelona",
+                    "city": "Barcelona",
+                    "country": "Spain",
+                    "founded": 1899,
+                    "stadium": "Camp Nou",
+                    "colors": "Blue and Garnet",
+                    "stadiumImage": "img/barcelona-stadium.jpg",
+                    "teamImage": "img/barcelona-team.jpg",
+                    "introduction": [
+                        "FC Barcelona is one of the most famous soccer clubs in Spain and the world.",
+                        "The club is based in Barcelona, Catalonia, and is known for its blue and garnet colors.",
+                        "Barcelona has become famous for technical, possession-based soccer and for developing talented players through its youth system.",
+                        "The club's motto, Mes que un club, means More than a club."
+                    ],
+                    "about": [
+                        "Barcelona was founded in 1899 by a group led by Joan Gamper.",
+                        "The club became closely connected with Catalan culture and identity.",
+                        "Barcelona developed one of soccer's most famous youth academies, commonly known as La Masia.",
+                        "Players including Lionel Messi, Xavi, Andres Iniesta, Sergio Busquets, and Carles Puyol developed through Barcelona's system.",
+                        "Johan Cruyff had an enormous influence on Barcelona as both a player and a manager.",
+                        "Pep Guardiola later built one of the most successful teams in soccer history around possession, movement, and pressing.",
+                        "Barcelona won six major trophies during the 2009 calendar year.",
+                        "Lionel Messi became the club's all-time leading scorer and one of the greatest players in the history of the sport."
+                    ],
+                    "topScorer": {
+                        "name": "Lionel Messi",
+                        "goals": 672
+                    },
+                    "trophies": [
+                        "28 La Liga Titles",
+                        "5 UEFA Champions League Titles",
+                        "32 Copa del Rey Titles",
+                        "4 European Cup Winners' Cups",
+                        "3 FIFA Club World Cups"
+                    ],
+                    "ballonDor": [
+                        "Luis Suarez",
+                        "Johan Cruyff",
+                        "Hristo Stoichkov",
+                        "Rivaldo",
+                        "Ronaldinho",
+                        "Lionel Messi"
+                    ],
+                    "funFacts": [
+                        "Barcelona's motto is Mes que un club, meaning More than a club.",
+                        "La Masia has produced many famous players.",
+                        "Lionel Messi scored 672 goals for Barcelona.",
+                        "Barcelona and Real Madrid compete in El Clasico.",
+                        "The club's supporters are often called Culers."
+                    ]
+                },
+                {
+                    "id": "atletico-madrid",
+                    "name": "Atletico Madrid",
+                    "city": "Madrid",
+                    "country": "Spain",
+                    "founded": 1903,
+                    "stadium": "Metropolitano Stadium",
+                    "colors": "Red, White, and Blue",
+                    "stadiumImage": "img/atletico-madrid-stadium.jpg",
+                    "teamImage": "img/atletico-madrid-team.jpg",
+                    "introduction": [
+                        "Atletico Madrid is one of Spain's most successful and recognizable soccer clubs.",
+                        "The club is based in Madrid and is famous for its red-and-white striped shirts.",
+                        "Atletico has developed a reputation for determination, strong defending, and passionate supporters.",
+                        "The club plays its home matches at the Metropolitano Stadium."
+                    ],
+                    "about": [
+                        "Atletico Madrid was founded in 1903.",
+                        "The club developed into one of the major teams in Spanish soccer and has won league and cup championships throughout its history.",
+                        "Atletico has traditionally competed with Real Madrid in the Madrid derby.",
+                        "The club played for many years at the Vicente Calderon Stadium before moving to its current stadium.",
+                        "Diego Simeone became manager in 2011 and helped establish a highly competitive identity built around organization and teamwork.",
+                        "Under Simeone, Atletico won La Liga, the Europa League, and other major trophies.",
+                        "The club also reached multiple UEFA Champions League finals during this period.",
+                        "Players such as Fernando Torres, Diego Godin, Antoine Griezmann, and Koke became strongly associated with modern Atletico Madrid."
+                    ],
+                    "topScorer": {
+                        "name": "Antoine Griezmann",
+                        "goals": "Club all-time leading scorer"
+                    },
+                    "trophies": [
+                        "11 La Liga Titles",
+                        "10 Copa del Rey Titles",
+                        "3 UEFA Europa League Titles",
+                        "1 European Cup Winners' Cup",
+                        "3 UEFA Super Cups"
+                    ],
+                    "ballonDor": [
+                        "No men's Ballon d'Or winner while representing Atletico Madrid."
+                    ],
+                    "funFacts": [
+                        "Atletico is commonly nicknamed Los Colchoneros.",
+                        "The club competes against Real Madrid in the Madrid derby.",
+                        "Atletico played at the Vicente Calderon before moving to the Metropolitano.",
+                        "Red and white stripes are a major part of the club's identity."
+                    ]
+                },
+                {
+                    "id": "athletic-bilbao",
+                    "name": "Athletic Bilbao",
+                    "city": "Bilbao",
+                    "country": "Spain",
+                    "founded": 1898,
+                    "stadium": "San Mames",
+                    "colors": "Red and White",
+                    "stadiumImage": "img/athletic-bilbao-stadium.jpg",
+                    "teamImage": "img/athletic-bilbao-team.jpg",
+                    "introduction": [
+                        "Athletic Bilbao is a historic Spanish soccer club based in Bilbao in the Basque Country.",
+                        "The club is famous for its red-and-white striped shirts and strong regional identity.",
+                        "Athletic plays its home matches at San Mames.",
+                        "The club is especially well known for its unique tradition of developing and fielding players connected to the Basque region."
+                    ],
+                    "about": [
+                        "Athletic Bilbao was founded in 1898 and became one of the early major clubs in Spanish soccer.",
+                        "The club has a strong connection to Basque culture and identity.",
+                        "Athletic is famous for its player policy centered on footballers developed in or connected with the Basque soccer system.",
+                        "Despite this distinctive approach, Athletic has remained competitive at the highest level of Spanish soccer.",
+                        "Athletic is one of the traditional clubs that has never been relegated from Spain's top division.",
+                        "The club has enjoyed particular success in the Copa del Rey.",
+                        "Historic players such as Telmo Zarra became major figures in Spanish soccer while representing Athletic.",
+                        "San Mames and Athletic's passionate supporters are important parts of the club's identity."
+                    ],
+                    "topScorer": {
+                        "name": "Telmo Zarra",
+                        "goals": 335
+                    },
+                    "trophies": [
+                        "8 La Liga Titles",
+                        "24 Copa del Rey Titles",
+                        "3 Spanish Super Cups"
+                    ],
+                    "ballonDor": [
+                        "No men's Ballon d'Or winner while representing Athletic Bilbao."
+                    ],
+                    "funFacts": [
+                        "Athletic has a famous policy centered on players connected to the Basque region.",
+                        "The club has never been relegated from Spain's top division.",
+                        "San Mames is sometimes called the Cathedral of soccer.",
+                        "Telmo Zarra is one of the most famous players in the club's history."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "germany",
+            "name": "Germany",
+            "flag": "img/germany-flag.jpg",
+            "description": "Explore four popular clubs from German soccer.",
+            "clubs": [
+                {
+                    "id": "bayern-munich",
+                    "name": "Bayern Munich",
+                    "city": "Munich",
+                    "country": "Germany",
+                    "founded": 1900,
+                    "stadium": "Allianz Arena",
+                    "colors": "Red and White",
+                    "stadiumImage": "img/bayern-munich-stadium.jpg",
+                    "teamImage": "img/bayern-munich-team.jpg",
+                    "introduction": [
+                        "Bayern Munich is the most successful soccer club in Germany and one of the most successful clubs in Europe.",
+                        "The club is based in Munich, Bavaria, and is famous for its red colors.",
+                        "Bayern plays its home matches at the Allianz Arena, a stadium known for its distinctive illuminated exterior.",
+                        "The club has featured many of Germany's greatest players and has regularly competed for major European trophies."
+                    ],
+                    "about": [
+                        "Bayern Munich was founded in 1900.",
+                        "The club developed into a major force in German soccer during the twentieth century.",
+                        "Bayern's rise to international prominence accelerated during the 1960s and 1970s.",
+                        "Franz Beckenbauer, Gerd Muller, and Sepp Maier formed the core of a team that achieved major domestic and European success.",
+                        "Bayern won three consecutive European Cups during the 1970s.",
+                        "The club has continued to dominate German soccer during the Bundesliga era.",
+                        "Bayern completed a Treble in 2013 by winning the Bundesliga, DFB-Pokal, and UEFA Champions League.",
+                        "The club completed another Treble in 2020."
+                    ],
+                    "topScorer": {
+                        "name": "Gerd Muller",
+                        "goals": 566
+                    },
+                    "trophies": [
+                        "Multiple German League Championships",
+                        "6 European Cup / UEFA Champions League Titles",
+                        "20 DFB-Pokal Titles",
+                        "1 UEFA Cup",
+                        "1 European Cup Winners' Cup",
+                        "2 FIFA Club World Cups"
+                    ],
+                    "ballonDor": [
+                        "Gerd Muller",
+                        "Franz Beckenbauer",
+                        "Karl-Heinz Rummenigge"
+                    ],
+                    "funFacts": [
+                        "Bayern is Germany's most successful soccer club.",
+                        "The Allianz Arena can illuminate its exterior.",
+                        "Bayern won three consecutive European Cups during the 1970s.",
+                        "The club completed continental Trebles in both 2013 and 2020."
+                    ]
+                },
+                {
+                    "id": "dortmund",
+                    "name": "Borussia Dortmund",
+                    "city": "Dortmund",
+                    "country": "Germany",
+                    "founded": 1909,
+                    "stadium": "Signal Iduna Park",
+                    "colors": "Black and Yellow",
+                    "stadiumImage": "img/dortmund-stadium.jpg",
+                    "teamImage": "img/dortmund-team.jpg",
+                    "introduction": [
+                        "Borussia Dortmund is one of Germany's best-known soccer clubs.",
+                        "The club is based in Dortmund and is famous for its black-and-yellow colors.",
+                        "Dortmund plays at Signal Iduna Park, which is known for its large crowds and intense atmosphere.",
+                        "The club has developed a reputation for passionate supporters and talented young players."
+                    ],
+                    "about": [
+                        "Borussia Dortmund was founded in 1909.",
+                        "The club became an important force in German soccer and won multiple national championships.",
+                        "Dortmund enjoyed a particularly successful period during the 1990s.",
+                        "The club won the UEFA Champions League in 1997.",
+                        "Financial difficulties created major challenges for Dortmund during the early 2000s.",
+                        "The club recovered and returned to major success under manager Jurgen Klopp.",
+                        "Dortmund won consecutive Bundesliga titles in 2011 and 2012.",
+                        "The club's Yellow Wall has become one of the most recognizable supporter sections in world soccer."
+                    ],
+                    "topScorer": {
+                        "name": "Alfred Preissler",
+                        "goals": 177
+                    },
+                    "trophies": [
+                        "8 German Championships",
+                        "1 UEFA Champions League",
+                        "5 DFB-Pokal Titles",
+                        "1 European Cup Winners' Cup",
+                        "1 Intercontinental Cup"
+                    ],
+                    "ballonDor": [
+                        "Matthias Sammer - 1996"
+                    ],
+                    "funFacts": [
+                        "Borussia Dortmund was founded in 1909.",
+                        "The club's colors are black and yellow.",
+                        "The Yellow Wall is one of Europe's most famous supporter sections.",
+                        "Dortmund won the Champions League in 1997."
+                    ]
+                },
+                {
+                    "id": "stuttgart",
+                    "name": "VfB Stuttgart",
+                    "city": "Stuttgart",
+                    "country": "Germany",
+                    "founded": 1893,
+                    "stadium": "MHPArena",
+                    "colors": "White and Red",
+                    "stadiumImage": "img/stuttgart-stadium.jpg",
+                    "teamImage": "img/stuttgart-team.jpg",
+                    "introduction": [
+                        "VfB Stuttgart is a historic German soccer club based in Stuttgart.",
+                        "The club is recognizable for its white shirts with a red chest band.",
+                        "Stuttgart plays its home matches at the MHPArena.",
+                        "The club has won major German championships and has a strong tradition of developing talented players."
+                    ],
+                    "about": [
+                        "VfB Stuttgart traces its history to 1893.",
+                        "The club developed into one of the important teams in southern Germany.",
+                        "Stuttgart has won multiple German national championships throughout its history.",
+                        "The club became one of the founding members of the Bundesliga in 1963.",
+                        "Stuttgart won the Bundesliga during the 1983-84 season.",
+                        "The club won another Bundesliga championship in 1992.",
+                        "A young Stuttgart squad captured the Bundesliga title again during the 2006-07 season.",
+                        "The club is also known for a youth development system that has produced numerous professional players."
+                    ],
+                    "topScorer": {
+                        "name": "Karl Allgower",
+                        "goals": 167
+                    },
+                    "trophies": [
+                        "5 German Championships",
+                        "4 DFB-Pokal Titles",
+                        "1 German Super Cup"
+                    ],
+                    "ballonDor": [
+                        "No men's Ballon d'Or winner while representing VfB Stuttgart."
+                    ],
+                    "funFacts": [
+                        "Stuttgart is famous for the red chest band on its home shirt.",
+                        "The club was a founding member of the Bundesliga.",
+                        "Stuttgart won the Bundesliga in 2007 with a relatively young team.",
+                        "The club has a strong youth development tradition."
+                    ]
+                },
+                {
+                    "id": "monchengladbach",
+                    "name": "Borussia Monchengladbach",
+                    "city": "Monchengladbach",
+                    "country": "Germany",
+                    "founded": 1900,
+                    "stadium": "Borussia-Park",
+                    "colors": "Black, White, and Green",
+                    "stadiumImage": "img/monchengladbach-stadium.jpg",
+                    "teamImage": "img/monchengladbach-team.jpg",
+                    "introduction": [
+                        "Borussia Monchengladbach is a historic German soccer club based in Monchengladbach.",
+                        "The club is commonly known as Gladbach and has a strong tradition in German soccer.",
+                        "Borussia plays its home matches at Borussia-Park.",
+                        "The club is especially remembered for its highly successful teams of the 1970s."
+                    ],
+                    "about": [
+                        "Borussia Monchengladbach was founded in 1900.",
+                        "The club rose to national prominence during the 1960s.",
+                        "Gladbach became one of Germany's dominant clubs during the 1970s.",
+                        "The team became known for fast and attacking soccer.",
+                        "Players such as Gunter Netzer, Jupp Heynckes, and Berti Vogts became important figures in the club's history.",
+                        "Gladbach won five Bundesliga championships during its most successful era.",
+                        "The club also achieved success in European competition by winning two UEFA Cups.",
+                        "Borussia Monchengladbach continues to have a passionate fan base and an important place in Bundesliga history."
+                    ],
+                    "topScorer": {
+                        "name": "Jupp Heynckes",
+                        "goals": 195
+                    },
+                    "trophies": [
+                        "5 German Championships",
+                        "3 DFB-Pokal Titles",
+                        "2 UEFA Cups"
+                    ],
+                    "ballonDor": [
+                        "Allan Simonsen - 1977"
+                    ],
+                    "funFacts": [
+                        "Gladbach won five Bundesliga titles during the 1970s.",
+                        "The club became famous for attacking soccer.",
+                        "Borussia-Park opened in 2004.",
+                        "Jupp Heynckes became a legendary figure for the club as a player."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "italy",
+            "name": "Italy",
+            "flag": "img/italy-flag.jpg",
+            "description": "Discover four popular clubs from Italian soccer.",
+            "clubs": [
+                {
+                    "id": "juventus",
+                    "name": "Juventus",
+                    "city": "Turin",
+                    "country": "Italy",
+                    "founded": 1897,
+                    "stadium": "Allianz Stadium",
+                    "colors": "Black and White",
+                    "stadiumImage": "img/juventus-stadium.jpg",
+                    "teamImage": "img/juventus-team.jpg",
+                    "introduction": [
+                        "Juventus is one of Italy's most successful and recognizable soccer clubs.",
+                        "The club is based in Turin and is famous for its black-and-white striped shirts.",
+                        "Juventus plays its home matches at Allianz Stadium.",
+                        "The club has a long history of domestic success and has featured many of the greatest players in Italian and international soccer."
+                    ],
+                    "about": [
+                        "Juventus was founded in 1897 by a group of students in Turin.",
+                        "The club developed into one of the strongest teams in Italian soccer.",
+                        "Juventus has won more Italian league championships than any other Italian club.",
+                        "The Agnelli family became closely associated with Juventus beginning in the 1920s.",
+                        "The club has featured famous players including Giampiero Boniperti, Michel Platini, Roberto Baggio, Alessandro Del Piero, Gianluigi Buffon, and Cristiano Ronaldo.",
+                        "Juventus has also enjoyed success in European competition.",
+                        "Alessandro Del Piero became one of the greatest symbols of the club during a long career in Turin.",
+                        "Juventus moved into its modern stadium in 2011."
+                    ],
+                    "topScorer": {
+                        "name": "Alessandro Del Piero",
+                        "goals": 290
+                    },
+                    "trophies": [
+                        "36 Italian League Titles",
+                        "2 European Cup / UEFA Champions League Titles",
+                        "15 Coppa Italia Titles",
+                        "3 UEFA Cups",
+                        "1 European Cup Winners' Cup",
+                        "2 Intercontinental Cups"
+                    ],
+                    "ballonDor": [
+                        "Omar Sivori",
+                        "Paolo Rossi",
+                        "Michel Platini",
+                        "Roberto Baggio",
+                        "Zinedine Zidane",
+                        "Pavel Nedved"
+                    ],
+                    "funFacts": [
+                        "Juventus was founded by students in Turin.",
+                        "The club is commonly known as the Old Lady.",
+                        "Juventus is famous for its black-and-white striped shirts.",
+                        "Alessandro Del Piero is the club's all-time leading scorer."
+                    ]
+                },
+                {
+                    "id": "inter-milan",
+                    "name": "Inter Milan",
+                    "city": "Milan",
+                    "country": "Italy",
+                    "founded": 1908,
+                    "stadium": "San Siro",
+                    "colors": "Black and Blue",
+                    "stadiumImage": "img/inter-milan-stadium.jpg",
+                    "teamImage": "img/inter-milan-team.jpg",
+                    "introduction": [
+                        "Inter Milan is one of Italy's most famous and successful soccer clubs.",
+                        "The club is based in Milan and is known for its black-and-blue striped shirts.",
+                        "Inter shares the San Siro stadium with city rival AC Milan.",
+                        "The club has achieved major success in both Italian and European competition."
+                    ],
+                    "about": [
+                        "Inter Milan was founded in 1908.",
+                        "The club's full name reflects its original goal of welcoming international players.",
+                        "Inter quickly became an important team in Italian soccer.",
+                        "The club enjoyed major European success during the 1960s under manager Helenio Herrera.",
+                        "That team became known as Grande Inter and won consecutive European Cups.",
+                        "Inter has featured famous players including Giuseppe Meazza, Javier Zanetti, Ronaldo Nazario, and many others.",
+                        "Jose Mourinho led Inter to a historic Treble in 2010.",
+                        "Inter won Serie A, the Coppa Italia, and UEFA Champions League during that season."
+                    ],
+                    "topScorer": {
+                        "name": "Giuseppe Meazza",
+                        "goals": 284
+                    },
+                    "trophies": [
+                        "20 Serie A Titles",
+                        "3 European Cup / UEFA Champions League Titles",
+                        "9 Coppa Italia Titles",
+                        "3 UEFA Cups",
+                        "1 FIFA Club World Cup",
+                        "2 Intercontinental Cups"
+                    ],
+                    "ballonDor": [
+                        "Lothar Matthaus - 1990",
+                        "Ronaldo Nazario - 1997"
+                    ],
+                    "funFacts": [
+                        "Inter has never been relegated from Italy's top division.",
+                        "Inter shares San Siro with AC Milan.",
+                        "The stadium is also officially named after Giuseppe Meazza.",
+                        "Inter completed a historic Treble in 2010."
+                    ]
+                },
+                {
+                    "id": "ac-milan",
+                    "name": "AC Milan",
+                    "city": "Milan",
+                    "country": "Italy",
+                    "founded": 1899,
+                    "stadium": "San Siro",
+                    "colors": "Red and Black",
+                    "stadiumImage": "img/ac-milan-stadium.jpg",
+                    "teamImage": "img/ac-milan-team.jpg",
+                    "introduction": [
+                        "AC Milan is one of Italy's most historic and successful soccer clubs.",
+                        "The club is based in Milan and is famous for its red-and-black striped shirts.",
+                        "AC Milan shares the San Siro stadium with city rival Inter Milan.",
+                        "The club has a particularly strong history in European competition."
+                    ],
+                    "about": [
+                        "AC Milan was founded in 1899.",
+                        "The club developed into one of Italy's major soccer institutions.",
+                        "Milan has featured legendary players from Italy and around the world.",
+                        "The late 1980s and early 1990s were an especially famous period under manager Arrigo Sacchi.",
+                        "Dutch stars Ruud Gullit, Marco van Basten, and Frank Rijkaard helped form one of the strongest teams of the era.",
+                        "Milan continued to enjoy European success under managers such as Fabio Capello and Carlo Ancelotti.",
+                        "Players including Paolo Maldini, Franco Baresi, Kaka, Andriy Shevchenko, and Andrea Pirlo became strongly associated with the club.",
+                        "AC Milan's seven European Cup and Champions League titles place it among Europe's most successful clubs."
+                    ],
+                    "topScorer": {
+                        "name": "Gunnar Nordahl",
+                        "goals": 221
+                    },
+                    "trophies": [
+                        "19 Serie A Titles",
+                        "7 European Cup / UEFA Champions League Titles",
+                        "5 Coppa Italia Titles",
+                        "2 European Cup Winners' Cups",
+                        "1 FIFA Club World Cup",
+                        "3 Intercontinental Cups"
+                    ],
+                    "ballonDor": [
+                        "Gianni Rivera",
+                        "Ruud Gullit",
+                        "Marco van Basten",
+                        "George Weah",
+                        "Andriy Shevchenko",
+                        "Kaka"
+                    ],
+                    "funFacts": [
+                        "AC Milan is known as the Rossoneri, meaning the Red and Blacks.",
+                        "Milan shares San Siro with Inter Milan.",
+                        "Paolo Maldini spent his entire senior club career with Milan.",
+                        "AC Milan has won seven European Cup and Champions League titles."
+                    ]
+                },
+                {
+                    "id": "genoa",
+                    "name": "Genoa",
+                    "city": "Genoa",
+                    "country": "Italy",
+                    "founded": 1893,
+                    "stadium": "Stadio Luigi Ferraris",
+                    "colors": "Red and Blue",
+                    "stadiumImage": "img/genoa-stadium.jpg",
+                    "teamImage": "img/genoa-team.jpg",
+                    "introduction": [
+                        "Genoa Cricket and Football Club is one of the oldest and most historic soccer clubs in Italy.",
+                        "The club is based in the port city of Genoa and is known for its red-and-blue colors.",
+                        "Genoa plays its home matches at Stadio Luigi Ferraris.",
+                        "Although much of Genoa's greatest success came during the early history of Italian soccer, the club remains an important part of the country's soccer tradition."
+                    ],
+                    "about": [
+                        "Genoa was founded in 1893 and is considered the oldest existing soccer club in Italy.",
+                        "The organization originally included cricket before soccer became its most famous sport.",
+                        "Genoa played an important role in the earliest years of organized Italian soccer.",
+                        "The club won the first Italian soccer championship in 1898.",
+                        "Genoa dominated the early period of Italian soccer and won six of the first seven national championships.",
+                        "The club eventually accumulated nine Italian league championships.",
+                        "Genoa's traditional symbol is the griffin.",
+                        "The club shares Stadio Luigi Ferraris with local rival Sampdoria.",
+                        "Matches between Genoa and Sampdoria are known as the Derby della Lanterna."
+                    ],
+                    "topScorer": {
+                        "name": "Edoardo Catto",
+                        "goals": 96
+                    },
+                    "trophies": [
+                        "9 Italian League Championships",
+                        "1 Coppa Italia"
+                    ],
+                    "ballonDor": [
+                        "No men's Ballon d'Or winner while representing Genoa."
+                    ],
+                    "funFacts": [
+                        "Genoa is considered the oldest existing soccer club in Italy.",
+                        "The club won the first Italian championship in 1898.",
+                        "Genoa won six of the first seven Italian championships.",
+                        "The club's symbol is a griffin.",
+                        "Genoa and Sampdoria compete in the Derby della Lanterna."
+                    ]
+                }
+            ]
+        }
+    ]
+}
