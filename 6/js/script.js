@@ -19,7 +19,7 @@ function addListItem(list, text) {
 }
 
 
-// Creates a paragraph and adds it to an element.
+// Adds a paragraph to an element.
 function addParagraph(container, text) {
     const paragraph = document.createElement("p");
     paragraph.textContent = text;
@@ -27,7 +27,7 @@ function addParagraph(container, text) {
 }
 
 
-// Creates a club fact.
+// Creates one club fact.
 function addFact(container, label, value) {
     const fact = document.createElement("div");
     fact.classList.add("club-fact");
@@ -45,7 +45,7 @@ function addFact(container, label, value) {
 }
 
 
-// Creates an information section with a heading.
+// Creates an information section.
 function createInfoSection(title) {
     const section = document.createElement("section");
     section.classList.add("club-info-block");
@@ -59,7 +59,16 @@ function createInfoSection(title) {
 }
 
 
-// Displays an error if the JSON file cannot be loaded.
+// Moves the page back to the top.
+function moveToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+// Displays an error if the JSON cannot be loaded.
 function displayError() {
     exploreContent.innerHTML = "";
 
@@ -98,7 +107,7 @@ function displayClubInformation(club, country) {
         club.name +
         ".";
 
-    stepLabel.textContent = "Club Profile";
+    stepLabel.textContent = club.country;
 
     backButton.hidden = false;
     restartButton.hidden = false;
@@ -201,49 +210,56 @@ function displayClubInformation(club, country) {
 
     // Top scorer
 
-    const scorerSection = createInfoSection("All-Time Top Scorer");
+    const scorerSection = createInfoSection(
+        "All-Time Top Scorer"
+    );
 
-    const scorerText = document.createElement("p");
+    const scorerName = document.createElement("h3");
+    scorerName.textContent = club.topScorer.name;
+
+    const scorerGoals = document.createElement("p");
 
     if (typeof club.topScorer.goals === "number") {
-        scorerText.textContent =
-            club.topScorer.name +
-            " - " +
-            club.topScorer.goals +
-            " goals";
+        scorerGoals.textContent =
+            club.topScorer.goals + " goals";
     } else {
-        scorerText.textContent =
-            club.topScorer.name +
-            " - " +
+        scorerGoals.textContent =
             club.topScorer.goals;
     }
 
-    scorerSection.appendChild(scorerText);
+    scorerSection.appendChild(scorerName);
+    scorerSection.appendChild(scorerGoals);
 
     clubArticle.appendChild(scorerSection);
 
 
     // Major trophies
 
-    const trophiesSection = createInfoSection("Major Trophies");
-    const trophyList = document.createElement("ul");
+    const trophiesSection = createInfoSection(
+        "Major Trophies"
+    );
+
+    const trophiesList = document.createElement("ul");
 
     club.trophies.forEach(function(trophy) {
-        addListItem(trophyList, trophy);
+        addListItem(trophiesList, trophy);
     });
 
-    trophiesSection.appendChild(trophyList);
+    trophiesSection.appendChild(trophiesList);
 
     clubArticle.appendChild(trophiesSection);
 
 
     // Ballon d'Or history
 
-    const ballonDorSection = createInfoSection("Ballon d'Or History");
+    const ballonDorSection = createInfoSection(
+        "Ballon d'Or History"
+    );
+
     const ballonDorList = document.createElement("ul");
 
-    club.ballonDor.forEach(function(winner) {
-        addListItem(ballonDorList, winner);
+    club.ballonDor.forEach(function(item) {
+        addListItem(ballonDorList, item);
     });
 
     ballonDorSection.appendChild(ballonDorList);
@@ -253,7 +269,10 @@ function displayClubInformation(club, country) {
 
     // Fun facts
 
-    const funFactsSection = createInfoSection("Fun Facts");
+    const funFactsSection = createInfoSection(
+        "Fun Facts"
+    );
+
     const funFactsList = document.createElement("ul");
 
     club.funFacts.forEach(function(fact) {
@@ -267,6 +286,9 @@ function displayClubInformation(club, country) {
 
     exploreContent.appendChild(clubArticle);
 
+
+    // Navigation
+
     backButton.onclick = function() {
         displayClubs(country);
     };
@@ -275,16 +297,14 @@ function displayClubInformation(club, country) {
         displayCountries();
     };
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    moveToTop();
 }
 
 
-// Displays the four clubs for the selected country.
+// Displays the clubs for the selected country.
 function displayClubs(country) {
-    exploreTitle.textContent = "Choose a " + country.name + " Club";
+    exploreTitle.textContent =
+        "Choose a " + country.name + " Club";
 
     exploreDescription.textContent =
         "You selected " +
@@ -345,14 +365,11 @@ function displayClubs(country) {
         displayCountries();
     };
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    moveToTop();
 }
 
 
-// Displays the four countries.
+// Displays the countries.
 function displayCountries() {
     exploreTitle.textContent = "Choose a Country";
 
@@ -370,7 +387,8 @@ function displayCountries() {
     countryGrid.classList.add("country-grid");
 
     soccerData.countries.forEach(function(country) {
-        const countryButton = document.createElement("button");
+        const countryButton =
+            document.createElement("button");
 
         countryButton.type = "button";
         countryButton.classList.add("country-card");
@@ -381,20 +399,34 @@ function displayCountries() {
         );
 
         countryButton.style.backgroundImage =
-            "linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('" +
+            "linear-gradient(" +
+            "rgba(0, 0, 0, 0.45), " +
+            "rgba(0, 0, 0, 0.45)" +
+            "), url('" +
             country.flag +
             "')";
 
-        const countryName = document.createElement("span");
+        const countryName =
+            document.createElement("span");
+
         countryName.classList.add("country-name");
         countryName.textContent = country.name;
 
-        const countryDescription = document.createElement("span");
-        countryDescription.classList.add("country-description");
-        countryDescription.textContent = country.description;
+        const countryDescription =
+            document.createElement("span");
 
-        const exploreText = document.createElement("span");
+        countryDescription.classList.add(
+            "country-description"
+        );
+
+        countryDescription.textContent =
+            country.description;
+
+        const exploreText =
+            document.createElement("span");
+
         exploreText.classList.add("country-view-text");
+
         exploreText.textContent =
             "Explore " + country.name + " →";
 
@@ -402,19 +434,19 @@ function displayCountries() {
         countryButton.appendChild(countryDescription);
         countryButton.appendChild(exploreText);
 
-        countryButton.addEventListener("click", function() {
-            displayClubs(country);
-        });
+        countryButton.addEventListener(
+            "click",
+            function() {
+                displayClubs(country);
+            }
+        );
 
         countryGrid.appendChild(countryButton);
     });
 
     exploreContent.appendChild(countryGrid);
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    moveToTop();
 }
 
 
