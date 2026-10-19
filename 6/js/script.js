@@ -1,62 +1,13 @@
 // Stores the soccer data after it is loaded.
 let soccerData = null;
 
-
-// Gets the HTML elements that JavaScript will change.
 const exploreContent = document.getElementById("explore-content");
 const exploreTitle = document.getElementById("explore-title");
 const exploreDescription = document.getElementById("explore-description");
 const stepLabel = document.getElementById("step-label");
 const backButton = document.getElementById("back-button");
 const restartButton = document.getElementById("restart-button");
-
-
-// Adds one item to a list.
-function addListItem(list, text) {
-    const listItem = document.createElement("li");
-    listItem.textContent = text;
-    list.appendChild(listItem);
-}
-
-
-// Adds a paragraph to an element.
-function addParagraph(container, text) {
-    const paragraph = document.createElement("p");
-    paragraph.textContent = text;
-    container.appendChild(paragraph);
-}
-
-
-// Creates one club fact.
-function addFact(container, label, value) {
-    const fact = document.createElement("div");
-    fact.classList.add("club-fact");
-
-    const factLabel = document.createElement("strong");
-    factLabel.textContent = label;
-
-    const factValue = document.createElement("span");
-    factValue.textContent = value;
-
-    fact.appendChild(factLabel);
-    fact.appendChild(factValue);
-
-    container.appendChild(fact);
-}
-
-
-// Creates an information section.
-function createInfoSection(title) {
-    const section = document.createElement("section");
-    section.classList.add("club-info-block");
-
-    const heading = document.createElement("h2");
-    heading.textContent = title;
-
-    section.appendChild(heading);
-
-    return section;
-}
+const navigationHelp = document.getElementById("navigation-help");
 
 
 // Moves the page back to the top.
@@ -68,11 +19,177 @@ function moveToTop() {
 }
 
 
+// Adds a paragraph to an element.
+function addParagraph(container, text) {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = text;
+    container.appendChild(paragraph);
+}
+
+
+// Adds one list item and keeps labels bold.
+function addListItem(list, item) {
+    const listItem = document.createElement("li");
+
+    if (item.label) {
+        const strong = document.createElement("strong");
+        strong.textContent = item.label + ":";
+        listItem.appendChild(strong);
+
+        listItem.appendChild(
+            document.createTextNode(" " + item.value)
+        );
+    } else {
+        listItem.textContent = item.text;
+    }
+
+    list.appendChild(listItem);
+}
+
+
+// Creates one story section.
+function createStoryRow(label, story, reverse) {
+    const row = document.createElement("div");
+    row.classList.add("story-row");
+
+    if (reverse) {
+        row.classList.add("story-row-reverse");
+    }
+
+    const text = document.createElement("div");
+    text.classList.add("story-text");
+
+    const eyebrow = document.createElement("p");
+    eyebrow.classList.add("eyebrow");
+    eyebrow.textContent = label;
+
+    const heading = document.createElement("h2");
+    heading.textContent = story.heading;
+
+    text.appendChild(eyebrow);
+    text.appendChild(heading);
+
+    story.paragraphs.forEach(function(paragraph) {
+        addParagraph(text, paragraph);
+    });
+
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("story-image");
+
+    const image = document.createElement("img");
+    image.src = story.image;
+    image.alt = story.imageAlt;
+
+    imageContainer.appendChild(image);
+
+    row.appendChild(text);
+    row.appendChild(imageContainer);
+
+    return row;
+}
+
+
+// Creates the club information section.
+function createFactsSection(club) {
+    const section = document.createElement("section");
+    section.classList.add("club-information");
+
+    const headingContainer = document.createElement("div");
+    headingContainer.classList.add("section-heading");
+
+    const eyebrow = document.createElement("p");
+    eyebrow.classList.add("eyebrow");
+    eyebrow.textContent = "Club Details";
+
+    const heading = document.createElement("h2");
+    heading.textContent = "Club Information";
+
+    headingContainer.appendChild(eyebrow);
+    headingContainer.appendChild(heading);
+
+    const grid = document.createElement("div");
+    grid.classList.add("facts-grid");
+
+    club.facts.forEach(function(fact) {
+        const card = document.createElement("article");
+        card.classList.add("fact-card");
+
+        const factHeading = document.createElement("h3");
+        factHeading.textContent = fact.label;
+
+        const factValue = document.createElement("p");
+        factValue.textContent = fact.value;
+
+        card.appendChild(factHeading);
+        card.appendChild(factValue);
+
+        grid.appendChild(card);
+    });
+
+    section.appendChild(headingContainer);
+    section.appendChild(grid);
+
+    return section;
+}
+
+
+// Creates an achievement section.
+function createAchievementSection(achievement) {
+    const section = document.createElement("section");
+    section.classList.add("achievements-section");
+
+    const headingContainer = document.createElement("div");
+    headingContainer.classList.add("section-heading");
+
+    const eyebrow = document.createElement("p");
+    eyebrow.classList.add("eyebrow");
+    eyebrow.textContent = achievement.eyebrow;
+
+    const heading = document.createElement("h2");
+    heading.textContent = achievement.title;
+
+    headingContainer.appendChild(eyebrow);
+    headingContainer.appendChild(heading);
+
+    const card = document.createElement("div");
+    card.classList.add("achievements-card");
+
+    achievement.blocks.forEach(function(block) {
+
+        if (block.type === "subheading") {
+            const subheading = document.createElement("h3");
+            subheading.textContent = block.text;
+            card.appendChild(subheading);
+        }
+
+        if (block.type === "paragraph") {
+            addParagraph(card, block.text);
+        }
+
+        if (block.type === "list") {
+            const list = document.createElement("ul");
+
+            block.items.forEach(function(item) {
+                addListItem(list, item);
+            });
+
+            card.appendChild(list);
+        }
+    });
+
+    section.appendChild(headingContainer);
+    section.appendChild(card);
+
+    return section;
+}
+
+
 // Displays an error if the JSON cannot be loaded.
 function displayError() {
     exploreContent.innerHTML = "";
 
     exploreTitle.textContent = "Soccer Data Error";
+
     exploreDescription.textContent =
         "There was a problem loading the soccer information.";
 
@@ -81,6 +198,10 @@ function displayError() {
     backButton.hidden = true;
     restartButton.hidden = true;
 
+    if (navigationHelp) {
+        navigationHelp.hidden = true;
+    }
+
     const errorMessage = document.createElement("div");
     errorMessage.classList.add("error-message");
 
@@ -88,6 +209,7 @@ function displayError() {
     errorHeading.textContent = "Unable to Load Soccer Data";
 
     const errorText = document.createElement("p");
+
     errorText.textContent =
         "The soccer information could not be loaded. Please try again later.";
 
@@ -107,187 +229,74 @@ function displayClubInformation(club, country) {
         club.name +
         ".";
 
-    stepLabel.textContent = club.country;
+    stepLabel.textContent = "Club Profile";
 
     backButton.hidden = false;
     restartButton.hidden = false;
 
+    if (navigationHelp) {
+        navigationHelp.hidden = true;
+    }
+
     exploreContent.innerHTML = "";
 
-    const clubArticle = document.createElement("article");
-    clubArticle.classList.add("club-profile");
+    const profile = document.createElement("div");
+    profile.classList.add("dynamic-club-page");
 
 
-    // Introduction
+    // Introduction and stadium
 
-    const introductionSection = document.createElement("section");
-    introductionSection.classList.add("club-story");
+    const storySection = document.createElement("section");
+    storySection.classList.add("club-story");
 
-    const introductionText = document.createElement("div");
-    introductionText.classList.add("club-story-text");
+    const introduction = createStoryRow(
+        "Introduction",
+        club.introduction,
+        false
+    );
 
-    const introductionLabel = document.createElement("p");
-    introductionLabel.classList.add("eyebrow");
-    introductionLabel.textContent = "Introduction";
-
-    const introductionHeading = document.createElement("h2");
-    introductionHeading.textContent = club.name;
-
-    introductionText.appendChild(introductionLabel);
-    introductionText.appendChild(introductionHeading);
-
-    club.introduction.forEach(function(paragraph) {
-        addParagraph(introductionText, paragraph);
-    });
-
-    const stadiumImage = document.createElement("img");
-    stadiumImage.classList.add("club-story-image");
-    stadiumImage.src = club.stadiumImage;
-    stadiumImage.alt =
-        club.stadium + ", home stadium of " + club.name;
-
-    introductionSection.appendChild(introductionText);
-    introductionSection.appendChild(stadiumImage);
-
-    clubArticle.appendChild(introductionSection);
+    storySection.appendChild(introduction);
 
 
-    // About the club
+    // About the club and team image
 
-    const aboutSection = document.createElement("section");
-    aboutSection.classList.add("club-story", "reverse");
+    const about = createStoryRow(
+        "About the Club",
+        club.about,
+        true
+    );
 
-    const aboutText = document.createElement("div");
-    aboutText.classList.add("club-story-text");
+    storySection.appendChild(about);
 
-    const aboutLabel = document.createElement("p");
-    aboutLabel.classList.add("eyebrow");
-    aboutLabel.textContent = "About the Club";
-
-    const aboutHeading = document.createElement("h2");
-    aboutHeading.textContent = "Club History";
-
-    aboutText.appendChild(aboutLabel);
-    aboutText.appendChild(aboutHeading);
-
-    club.about.forEach(function(paragraph) {
-        addParagraph(aboutText, paragraph);
-    });
-
-    const teamImage = document.createElement("img");
-    teamImage.classList.add("club-story-image");
-    teamImage.src = club.teamImage;
-    teamImage.alt = club.name + " team";
-
-    aboutSection.appendChild(aboutText);
-    aboutSection.appendChild(teamImage);
-
-    clubArticle.appendChild(aboutSection);
+    profile.appendChild(storySection);
 
 
     // Club information
 
-    const factsSection = document.createElement("section");
-    factsSection.classList.add("club-facts-section");
-
-    const factsHeading = document.createElement("h2");
-    factsHeading.textContent = "Club Information";
-
-    const factsGrid = document.createElement("div");
-    factsGrid.classList.add("club-facts-grid");
-
-    addFact(factsGrid, "Country", club.country);
-    addFact(factsGrid, "City", club.city);
-    addFact(factsGrid, "Founded", club.founded);
-    addFact(factsGrid, "Stadium", club.stadium);
-    addFact(factsGrid, "Colors", club.colors);
-
-    factsSection.appendChild(factsHeading);
-    factsSection.appendChild(factsGrid);
-
-    clubArticle.appendChild(factsSection);
-
-
-    // Top scorer
-
-    const scorerSection = createInfoSection(
-        "All-Time Top Scorer"
+    profile.appendChild(
+        createFactsSection(club)
     );
 
-    const scorerName = document.createElement("h3");
-    scorerName.textContent = club.topScorer.name;
 
-    const scorerGoals = document.createElement("p");
+    // Scorer, trophies, Ballon d'Or, and fun facts
 
-    if (typeof club.topScorer.goals === "number") {
-        scorerGoals.textContent =
-            club.topScorer.goals + " goals";
-    } else {
-        scorerGoals.textContent =
-            club.topScorer.goals;
-    }
-
-    scorerSection.appendChild(scorerName);
-    scorerSection.appendChild(scorerGoals);
-
-    clubArticle.appendChild(scorerSection);
-
-
-    // Major trophies
-
-    const trophiesSection = createInfoSection(
-        "Major Trophies"
-    );
-
-    const trophiesList = document.createElement("ul");
-
-    club.trophies.forEach(function(trophy) {
-        addListItem(trophiesList, trophy);
+    club.achievements.forEach(function(achievement) {
+        profile.appendChild(
+            createAchievementSection(achievement)
+        );
     });
 
-    trophiesSection.appendChild(trophiesList);
 
-    clubArticle.appendChild(trophiesSection);
-
-
-    // Ballon d'Or history
-
-    const ballonDorSection = createInfoSection(
-        "Ballon d'Or History"
-    );
-
-    const ballonDorList = document.createElement("ul");
-
-    club.ballonDor.forEach(function(item) {
-        addListItem(ballonDorList, item);
-    });
-
-    ballonDorSection.appendChild(ballonDorList);
-
-    clubArticle.appendChild(ballonDorSection);
-
-
-    // Fun facts
-
-    const funFactsSection = createInfoSection(
-        "Fun Facts"
-    );
-
-    const funFactsList = document.createElement("ul");
-
-    club.funFacts.forEach(function(fact) {
-        addListItem(funFactsList, fact);
-    });
-
-    funFactsSection.appendChild(funFactsList);
-
-    clubArticle.appendChild(funFactsSection);
-
-
-    exploreContent.appendChild(clubArticle);
+    exploreContent.appendChild(profile);
 
 
     // Navigation
+
+    backButton.textContent =
+        "← Back to " + country.name + " Clubs";
+
+    restartButton.textContent =
+        "Choose Another Country";
 
     backButton.onclick = function() {
         displayClubs(country);
@@ -316,6 +325,10 @@ function displayClubs(country) {
     backButton.hidden = false;
     restartButton.hidden = true;
 
+    if (navigationHelp) {
+        navigationHelp.hidden = false;
+    }
+
     exploreContent.innerHTML = "";
 
     const clubGrid = document.createElement("div");
@@ -332,34 +345,54 @@ function displayClubs(country) {
             "View information about " + club.name
         );
 
+
+        // Club badge
+
         const clubImage = document.createElement("img");
+
         clubImage.src = club.badge;
         clubImage.alt = club.name + " badge";
+
+
+        // Club name
 
         const clubName = document.createElement("h2");
         clubName.textContent = club.name;
 
-        const clubCity = document.createElement("p");
-        clubCity.textContent =
-            club.city + ", " + club.country;
+
+        // View club text
 
         const viewText = document.createElement("span");
         viewText.classList.add("club-view-text");
         viewText.textContent = "View Club →";
 
+
         clubButton.appendChild(clubImage);
         clubButton.appendChild(clubName);
-        clubButton.appendChild(clubCity);
         clubButton.appendChild(viewText);
 
-        clubButton.addEventListener("click", function() {
-            displayClubInformation(club, country);
-        });
+
+        // Changes the DOM instead of opening another page.
+
+        clubButton.addEventListener(
+            "click",
+            function() {
+                displayClubInformation(
+                    club,
+                    country
+                );
+            }
+        );
 
         clubGrid.appendChild(clubButton);
     });
 
     exploreContent.appendChild(clubGrid);
+
+
+    // Back to countries
+
+    backButton.textContent = "← Back";
 
     backButton.onclick = function() {
         displayCountries();
@@ -381,6 +414,10 @@ function displayCountries() {
     backButton.hidden = true;
     restartButton.hidden = true;
 
+    if (navigationHelp) {
+        navigationHelp.hidden = false;
+    }
+
     exploreContent.innerHTML = "";
 
     const countryGrid = document.createElement("div");
@@ -395,8 +432,12 @@ function displayCountries() {
 
         countryButton.setAttribute(
             "aria-label",
-            "Explore soccer clubs from " + country.name
+            "Explore soccer clubs from " +
+            country.name
         );
+
+
+        // Country flag background
 
         countryButton.style.backgroundImage =
             "linear-gradient(" +
@@ -406,11 +447,17 @@ function displayCountries() {
             country.flag +
             "')";
 
+
+        // Country name
+
         const countryName =
             document.createElement("span");
 
         countryName.classList.add("country-name");
         countryName.textContent = country.name;
+
+
+        // Country description
 
         const countryDescription =
             document.createElement("span");
@@ -422,17 +469,31 @@ function displayCountries() {
         countryDescription.textContent =
             country.description;
 
+
+        // Explore text
+
         const exploreText =
             document.createElement("span");
 
-        exploreText.classList.add("country-view-text");
+        exploreText.classList.add(
+            "country-view-text"
+        );
 
         exploreText.textContent =
-            "Explore " + country.name + " →";
+            "Explore " +
+            country.name +
+            " →";
+
 
         countryButton.appendChild(countryName);
-        countryButton.appendChild(countryDescription);
+        countryButton.appendChild(
+            countryDescription
+        );
+
         countryButton.appendChild(exploreText);
+
+
+        // Changes the DOM to show the clubs.
 
         countryButton.addEventListener(
             "click",
@@ -454,6 +515,7 @@ function displayCountries() {
 function loadSoccerData() {
     fetch("data/clubs.json")
         .then(function(response) {
+
             if (!response.ok) {
                 throw new Error(
                     "The soccer data could not be loaded."
@@ -462,10 +524,13 @@ function loadSoccerData() {
 
             return response.json();
         })
+
         .then(function(data) {
             soccerData = data;
+
             displayCountries();
         })
+
         .catch(function() {
             displayError();
         });
