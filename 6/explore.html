@@ -5,14 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Rehan Tariq">
-    <meta name="description"content="Choose a European country to explore popular soccer clubs.">
+    <meta name="description" content="Interactively explore European soccer clubs from England, Spain, Germany, and Italy.">
+
     <title>Explore Clubs | European Soccer Explorer</title>
 
-    <link rel="icon" type="image/png" sizes="32x32"href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16"href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="shortcut icon" href="img/favicon.ico">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -25,10 +28,25 @@
             </a>
 
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a class="active" href="explore.html">Explore</a></li>
-                <li><a href="info.html">Soccer Info</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a class="active" href="explore.html">Explore</a>
+                </li>
+
+                <li>
+                    <a href="info.html">Soccer Info</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <li>
+                    <a href="#" class="login-link">Login / Sign Up</a>
+                </li>
             </ul>
 
         </nav>
@@ -40,96 +58,67 @@
         <section class="choice-section">
 
             <div class="choice-heading">
-                <p class="eyebrow">Step 1 of 2</p>
+                <p class="eyebrow" id="step-label">
+                    Step 1 of 2
+                </p>
 
-                <h1>Choose a Country</h1>
+                <h1 id="explore-title">
+                    Choose a Country
+                </h1>
 
-                <p>
+                <p id="explore-description">
                     Start exploring European soccer by choosing a country.
                     Your selection will show you four clubs from that country.
                 </p>
             </div>
 
 
-            <div class="country-grid">
+            <!-- JavaScript will place the countries, clubs,
+                 and final club information inside this container. -->
 
-                <!-- England -->
-                <a class="country-card england-card" href="england.html">
-                    <div class="country-card-content">
-                        <h2>England</h2>
+            <div id="explore-content" aria-live="polite">
 
-                        <p>
-                            Explore four popular clubs from English soccer.
-                        </p>
+                <div class="loading-message">
+                    <p>Loading soccer information...</p>
+                </div>
 
-                        <span class="card-link">
-                            Explore England &rarr;
-                        </span>
-                    </div>
-                </a>
+            </div>
 
 
-                <!-- Spain -->
-                <a class="country-card spain-card" href="spain.html">
-                    <div class="country-card-content">
-                        <h2>Spain</h2>
+            <!-- JavaScript controls these navigation buttons. -->
 
-                        <p>
-                            Discover four popular clubs from Spanish soccer.
-                        </p>
+            <div class="dynamic-navigation">
 
-                        <span class="card-link">
-                            Explore Spain &rarr;
-                        </span>
-                    </div>
-                </a>
+                <button
+                    id="back-button"
+                    class="back-button"
+                    type="button"
+                    hidden>
+                    &larr; Back
+                </button>
 
-
-                <!-- Germany -->
-                <a class="country-card germany-card" href="germany.html">
-                    <div class="country-card-content">
-                        <h2>Germany</h2>
-
-                        <p>
-                            Explore four popular clubs from German soccer.
-                        </p>
-
-                        <span class="card-link">
-                            Explore Germany &rarr;
-                        </span>
-                    </div>
-                </a>
-
-
-                <!-- Italy -->
-                <a class="country-card italy-card" href="italy.html">
-                    <div class="country-card-content">
-                        <h2>Italy</h2>
-
-                        <p>
-                            Discover four popular clubs from Italian soccer.
-                        </p>
-
-                        <span class="card-link">
-                            Explore Italy &rarr;
-                        </span>
-                    </div>
-                </a>
+                <button
+                    id="restart-button"
+                    class="back-button"
+                    type="button"
+                    hidden>
+                    Choose Another Country
+                </button>
 
             </div>
 
         </section>
 
 
-        <section class="navigation-help">
+        <section class="navigation-help" id="navigation-help">
 
             <h2>How It Works</h2>
 
             <p>
                 First, choose a country. Next, choose one of the four clubs
-                from that country. You will then see information about the
-                club, including its history, stadium, details, and
-                achievements.
+                from that country. The final selection will display information
+                about the club, including its history, stadium, achievements,
+                top scorer, and other facts.
             </p>
 
         </section>
