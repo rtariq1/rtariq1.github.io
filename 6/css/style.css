@@ -1,0 +1,1162 @@
+/* Basic Page Styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7f6;
+    color: #17221c;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* Navigation */
+
+.site-header {
+    background-color: #102a1e;
+    color: white;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.logo {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    background-color: #24563d;
+}
+
+.nav-links a.active {
+    background-color: white;
+    color: #102a1e;
+}
+
+
+/* Accessibility Focus */
+
+.nav-links a:focus-visible,
+.logo:focus-visible,
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.back-button:focus-visible {
+    outline: 3px solid #e6b94a;
+    outline-offset: 3px;
+}
+
+
+/* Home Page Hero */
+
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+    display: grid;
+    gap: 35px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: #24724b;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    margin: 8px 0 15px;
+    font-size: 2.4rem;
+    line-height: 1.1;
+}
+
+.hero-text {
+    max-width: 650px;
+    margin-bottom: 28px;
+    font-size: 1.05rem;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+
+/* Buttons */
+
+.primary-button,
+.secondary-button,
+.back-button {
+    display: inline-block;
+    padding: 12px 22px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.primary-button {
+    background-color: #24724b;
+    color: white;
+}
+
+.secondary-button {
+    background-color: white;
+    color: #102a1e;
+}
+
+.back-button {
+    background-color: #102a1e;
+    color: white;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.back-button:hover {
+    transform: translateY(-2px);
+}
+
+.back-button:hover {
+    background-color: #24724b;
+}
+
+
+/* Home Page Introduction */
+
+.introduction {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.introduction h2,
+.section-heading h2 {
+    margin-top: 5px;
+    font-size: 2rem;
+}
+
+
+/* Home Page Features */
+
+.discover {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.feature-card {
+    padding: 28px;
+    background-color: white;
+    border: 1px solid #dbe4df;
+    border-radius: 12px;
+}
+
+.feature-card h3 {
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    margin-bottom: 0;
+}
+
+.feature-icon {
+    font-size: 2rem;
+}
+
+
+/* Home Page Call to Action */
+
+.explore-callout {
+    padding: 55px 20px;
+    background-color: #24724b;
+    color: white;
+    text-align: center;
+}
+
+.explore-callout h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+
+/* Two-Step Explorer */
+
+.choice-section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 20px;
+}
+
+.choice-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.choice-heading h1 {
+    margin: 5px 0 15px;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.choice-heading p:last-child {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Country Grid */
+
+.country-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+
+/* Country Cards */
+
+.country-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 280px;
+    padding: 0;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: white;
+    text-decoration: none;
+
+    border: 2px solid transparent;
+    border-radius: 16px;
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.country-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.48);
+    transition: background-color 0.25s ease;
+}
+
+.country-card-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 30px;
+}
+
+.country-card h2 {
+    margin: 0 0 8px;
+    color: white;
+    font-size: 2rem;
+}
+
+.country-card p {
+    max-width: 420px;
+    margin: 0 0 18px;
+    color: white;
+}
+
+.country-card .card-link {
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Country Flag Backgrounds */
+
+.england-card {
+    background-image: url("../img/england-flag.jpg");
+}
+
+.spain-card {
+    background-image: url("../img/spain-flag.jpg");
+}
+
+.germany-card {
+    background-image: url("../img/germany-flag.jpg");
+}
+
+.italy-card {
+    background-image: url("../img/italy-flag.jpg");
+}
+
+
+/* Country Card Effects */
+
+.country-card:hover {
+    transform: translateY(-6px);
+    border-color: #24724b;
+    box-shadow: 0 12px 28px rgba(16, 42, 30, 0.22);
+}
+
+.country-card:hover::before {
+    background-color: rgba(0, 0, 0, 0.30);
+}
+
+.country-card:focus-visible {
+    outline: 4px solid #e6b94a;
+    outline-offset: 4px;
+}
+
+
+/* Club Selection */
+
+.club-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+
+/* Club Cards */
+
+.club-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 280px;
+    padding: 0;
+
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    color: white;
+    text-decoration: none;
+
+    border: 2px solid #dbe4df;
+    border-radius: 16px;
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.club-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05) 25%,
+            rgba(0, 0, 0, 0.80) 100%
+        );
+
+    transition: background 0.25s ease;
+}
+
+.club-card-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 30px;
+}
+
+.club-card h2 {
+    margin: 0 0 8px;
+    color: white;
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.club-card p {
+    margin: 0 0 12px;
+    color: white;
+}
+
+.club-card .card-link {
+    color: white;
+    font-weight: bold;
+}
+
+
+/* England Club Badges */
+
+.manchester-united-card {
+    background-image: url("../img/manchester-united.png");
+}
+
+.manchester-city-card {
+    background-image: url("../img/manchester-city.png");
+}
+
+.liverpool-card {
+    background-image: url("../img/liverpool.png");
+}
+
+.arsenal-card {
+    background-image: url("../img/arsenal.png");
+}
+
+
+/* Spain Club Badges */
+
+.real-madrid-card {
+    background-image: url("../img/real-madrid.png");
+}
+
+.barcelona-card {
+    background-image: url("../img/barcelona.png");
+}
+
+.atletico-madrid-card {
+    background-image: url("../img/atletico-madrid.png");
+}
+
+.athletic-bilbao-card {
+    background-image: url("../img/athletic-bilbao.png");
+}
+
+
+/* Germany Club Badges */
+
+.bayern-munich-card {
+    background-image: url("../img/bayern-munich.png");
+}
+
+.dortmund-card {
+    background-image: url("../img/dortmund.png");
+}
+
+.stuttgart-card {
+    background-image: url("../img/stuttgart.png");
+}
+
+.monchengladbach-card {
+    background-image: url("../img/monchengladbach.png");
+}
+
+
+/* Italy Club Badges */
+
+.juventus-card {
+    background-image: url("../img/juventus.png");
+}
+
+.inter-milan-card {
+    background-image: url("../img/inter-milan.png");
+}
+
+.ac-milan-card {
+    background-image: url("../img/ac-milan.png");
+}
+
+.genoa-card {
+    background-image: url("../img/genoa.png");
+}
+
+
+/* Club Card Effects */
+
+.club-card:hover {
+    transform: translateY(-6px);
+    border-color: #24724b;
+    box-shadow: 0 12px 28px rgba(16, 42, 30, 0.22);
+}
+
+.club-card:hover::before {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 25%,
+            rgba(0, 0, 0, 0.70) 100%
+        );
+}
+
+.club-card:focus-visible {
+    outline: 4px solid #e6b94a;
+    outline-offset: 4px;
+}
+
+
+/* Step Navigation */
+
+.step-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.step-navigation p {
+    margin: 0;
+}
+
+
+/* How It Works */
+
+.navigation-help {
+    max-width: 800px;
+    margin: 0 auto 70px;
+    padding: 35px;
+    background-color: #e8f0eb;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.navigation-help h2 {
+    margin-top: 0;
+}
+
+
+/* Final Club Information Pages */
+
+.club-hero {
+    max-width: 900px;
+    margin: auto;
+    padding: 65px 20px 35px;
+    text-align: center;
+}
+
+.club-hero h1 {
+    margin: 5px 0 15px;
+    font-size: 2.7rem;
+    line-height: 1.1;
+}
+
+.club-subtitle {
+    max-width: 650px;
+    margin: auto;
+    font-size: 1.05rem;
+}
+
+
+/* Club Story */
+
+.club-story {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 20px 60px;
+}
+
+.story-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+.story-row:last-child {
+    margin-bottom: 0;
+}
+
+.story-text h2 {
+    margin: 5px 0 15px;
+    font-size: 2rem;
+}
+
+.story-text p:last-child {
+    margin-bottom: 0;
+}
+
+.story-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+
+/* Club Information */
+
+.club-information {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.fact-card {
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #dbe4df;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.fact-card h3 {
+    margin: 0 0 8px;
+    color: #24724b;
+}
+
+.fact-card p {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+
+/* Achievements */
+
+.achievements-section {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px 70px;
+}
+
+.achievements-card {
+    padding: 30px;
+    background-color: #e8f0eb;
+    border-radius: 14px;
+}
+
+.achievements-card h3 {
+    margin-top: 0;
+}
+
+.achievements-card ul {
+    margin: 0;
+    padding-left: 25px;
+}
+
+.achievements-card li {
+    margin-bottom: 12px;
+}
+
+.achievements-card li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Club Page Navigation */
+
+.club-navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px 70px;
+}
+
+
+/* Soccer Info Page */
+
+.info-hero {
+    max-width: 850px;
+    margin: auto;
+    padding: 70px 20px 45px;
+    text-align: center;
+}
+
+.info-hero h1 {
+    margin: 5px 0 15px;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.info-hero p:last-child {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.soccer-info-section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 55px 20px;
+}
+
+.alternate-info {
+    max-width: none;
+    padding-left: max(20px, calc((100% - 1060px) / 2));
+    padding-right: max(20px, calc((100% - 1060px) / 2));
+    background-color: #e8f0eb;
+}
+
+.info-content {
+    max-width: 800px;
+    margin: 0 auto 35px;
+}
+
+.info-content h2 {
+    margin: 5px 0 15px;
+    font-size: 2rem;
+}
+
+.league-grid,
+.competition-grid,
+.terms-grid,
+.process-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.league-card,
+.competition-card,
+.term-card,
+.process-card {
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #dbe4df;
+    border-radius: 12px;
+}
+
+.league-card h3,
+.competition-card h3,
+.term-card h3,
+.process-card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.league-card p:last-child,
+.competition-card p:last-child,
+.term-card p:last-child,
+.process-card p:last-child {
+    margin-bottom: 0;
+}
+
+.league-name {
+    color: #24724b;
+    font-weight: bold;
+}
+
+.competition-icon {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.process-number {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    background-color: #24724b;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+
+/* Contact Page */
+
+.contact-hero {
+    max-width: 800px;
+    margin: auto;
+    padding: 70px 20px 45px;
+    text-align: center;
+}
+
+.contact-hero h1 {
+    margin: 5px 0 15px;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.contact-hero p:last-child {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px 70px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.contact-info h2 {
+    margin: 5px 0 15px;
+    font-size: 2rem;
+}
+
+.contact-detail {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #e8f0eb;
+    border-radius: 10px;
+}
+
+.contact-detail h3 {
+    margin: 0 0 5px;
+    color: #24724b;
+}
+
+.contact-detail p {
+    margin: 0;
+}
+
+
+/* Contact Form */
+
+.contact-form-container {
+    padding: 30px;
+    background-color: white;
+    border: 1px solid #dbe4df;
+    border-radius: 14px;
+}
+
+.contact-form-container h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.contact-form {
+    margin-top: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font: inherit;
+    color: #17221c;
+    background-color: white;
+    border: 1px solid #aebdb5;
+    border-radius: 7px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 3px solid #e6b94a;
+    outline-offset: 2px;
+    border-color: #24724b;
+}
+
+.form-button {
+    width: 100%;
+    padding: 13px 22px;
+    font: inherit;
+    font-weight: bold;
+    background-color: #24724b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.form-button:hover {
+    background-color: #102a1e;
+    transform: translateY(-2px);
+}
+
+.form-button:focus-visible {
+    outline: 3px solid #e6b94a;
+    outline-offset: 3px;
+}
+
+
+/* Contact Form Note */
+
+.form-note {
+    max-width: 800px;
+    margin: 0 auto 70px;
+    padding: 30px;
+    background-color: #e8f0eb;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.form-note h2 {
+    margin-top: 0;
+}
+
+
+/* Footer */
+
+.site-footer {
+    padding: 20px;
+    background-color: #102a1e;
+    color: white;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+
+/* Tablet - 700px and Larger */
+
+@media (min-width: 700px) {
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .country-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .country-card {
+        min-height: 310px;
+    }
+
+    .club-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .club-card {
+        min-height: 310px;
+    }
+
+    .choice-heading h1 {
+        font-size: 3rem;
+    }
+
+    .step-navigation {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .club-hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .story-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .story-row-reverse .story-image {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .story-row-reverse .story-text {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .story-image img {
+        height: 350px;
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .club-navigation {
+        flex-direction: row;
+    }
+
+    .info-hero h1 {
+        font-size: 3rem;
+    }
+
+    .league-grid,
+    .terms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .competition-grid,
+    .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact-hero h1 {
+        font-size: 3rem;
+    }
+}
+
+
+/* Desktop - 1000px and Larger */
+
+@media (min-width: 1000px) {
+
+    .hero {
+        grid-template-columns: 1.1fr 0.9fr;
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero-image img {
+        height: 430px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .choice-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .country-card {
+        min-height: 340px;
+    }
+
+    .country-card-content {
+        padding: 38px;
+    }
+
+    .club-card {
+        min-height: 340px;
+    }
+
+    .club-card-content {
+        padding: 38px;
+    }
+
+    .club-hero {
+        padding-top: 90px;
+        padding-bottom: 50px;
+    }
+
+    .club-hero h1 {
+        font-size: 4rem;
+    }
+
+    .story-row {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+        margin-bottom: 90px;
+    }
+
+    .story-row-reverse {
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .story-image img {
+        height: 400px;
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .info-hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .league-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .terms-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .contact-hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .contact-section {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 60px;
+        align-items: start;
+    }
+}
