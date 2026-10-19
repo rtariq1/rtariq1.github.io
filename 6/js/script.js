@@ -1,5 +1,8 @@
+// Stores the soccer data after it is loaded.
 let soccerData = null;
 
+
+// Gets the HTML elements that JavaScript will change.
 const exploreContent = document.getElementById("explore-content");
 const exploreTitle = document.getElementById("explore-title");
 const exploreDescription = document.getElementById("explore-description");
@@ -8,7 +11,7 @@ const backButton = document.getElementById("back-button");
 const restartButton = document.getElementById("restart-button");
 
 
-// Adds an item to a list.
+// Adds one item to a list.
 function addListItem(list, text) {
     const listItem = document.createElement("li");
     listItem.textContent = text;
@@ -16,10 +19,36 @@ function addListItem(list, text) {
 }
 
 
-// Creates a section with a heading.
-function createSection(title) {
+// Creates a paragraph and adds it to an element.
+function addParagraph(container, text) {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = text;
+    container.appendChild(paragraph);
+}
+
+
+// Creates a club fact.
+function addFact(container, label, value) {
+    const fact = document.createElement("div");
+    fact.classList.add("club-fact");
+
+    const factLabel = document.createElement("strong");
+    factLabel.textContent = label;
+
+    const factValue = document.createElement("span");
+    factValue.textContent = value;
+
+    fact.appendChild(factLabel);
+    fact.appendChild(factValue);
+
+    container.appendChild(fact);
+}
+
+
+// Creates an information section with a heading.
+function createInfoSection(title) {
     const section = document.createElement("section");
-    section.classList.add("club-info-section");
+    section.classList.add("club-info-block");
 
     const heading = document.createElement("h2");
     heading.textContent = title;
@@ -30,9 +59,18 @@ function createSection(title) {
 }
 
 
-// Displays an error message.
+// Displays an error if the JSON file cannot be loaded.
 function displayError() {
     exploreContent.innerHTML = "";
+
+    exploreTitle.textContent = "Soccer Data Error";
+    exploreDescription.textContent =
+        "There was a problem loading the soccer information.";
+
+    stepLabel.textContent = "Error";
+
+    backButton.hidden = true;
+    restartButton.hidden = true;
 
     const errorMessage = document.createElement("div");
     errorMessage.classList.add("error-message");
@@ -51,11 +89,16 @@ function displayError() {
 }
 
 
-// Displays all information for a club.
+// Displays all information for the selected club.
 function displayClubInformation(club, country) {
     exploreTitle.textContent = club.name;
-    exploreDescription.textContent = club.city + ", " + club.country;
-    stepLabel.textContent = "Club Information";
+
+    exploreDescription.textContent =
+        "Discover the history, stadium, legendary players, major trophies, records, and interesting facts about " +
+        club.name +
+        ".";
+
+    stepLabel.textContent = "Club Profile";
 
     backButton.hidden = false;
     restartButton.hidden = false;
@@ -63,56 +106,103 @@ function displayClubInformation(club, country) {
     exploreContent.innerHTML = "";
 
     const clubArticle = document.createElement("article");
-    clubArticle.classList.add("club-details");
+    clubArticle.classList.add("club-profile");
+
+
+    // Introduction
+
+    const introductionSection = document.createElement("section");
+    introductionSection.classList.add("club-story");
+
+    const introductionText = document.createElement("div");
+    introductionText.classList.add("club-story-text");
+
+    const introductionLabel = document.createElement("p");
+    introductionLabel.classList.add("eyebrow");
+    introductionLabel.textContent = "Introduction";
+
+    const introductionHeading = document.createElement("h2");
+    introductionHeading.textContent = club.name;
+
+    introductionText.appendChild(introductionLabel);
+    introductionText.appendChild(introductionHeading);
+
+    club.introduction.forEach(function(paragraph) {
+        addParagraph(introductionText, paragraph);
+    });
 
     const stadiumImage = document.createElement("img");
-    stadiumImage.classList.add("club-detail-image");
+    stadiumImage.classList.add("club-story-image");
     stadiumImage.src = club.stadiumImage;
     stadiumImage.alt =
         club.stadium + ", home stadium of " + club.name;
 
-    clubArticle.appendChild(stadiumImage);
-
-    const factsSection = createSection("Club Information");
-    const factsList = document.createElement("ul");
-
-    addListItem(factsList, "Country: " + club.country);
-    addListItem(factsList, "City: " + club.city);
-    addListItem(factsList, "Founded: " + club.founded);
-    addListItem(factsList, "Stadium: " + club.stadium);
-    addListItem(factsList, "Colors: " + club.colors);
-
-    factsSection.appendChild(factsList);
-    clubArticle.appendChild(factsSection);
-
-    const introductionSection = createSection("Introduction");
-
-    club.introduction.forEach(function(paragraph) {
-        const text = document.createElement("p");
-        text.textContent = paragraph;
-        introductionSection.appendChild(text);
-    });
+    introductionSection.appendChild(introductionText);
+    introductionSection.appendChild(stadiumImage);
 
     clubArticle.appendChild(introductionSection);
 
+
+    // About the club
+
+    const aboutSection = document.createElement("section");
+    aboutSection.classList.add("club-story", "reverse");
+
+    const aboutText = document.createElement("div");
+    aboutText.classList.add("club-story-text");
+
+    const aboutLabel = document.createElement("p");
+    aboutLabel.classList.add("eyebrow");
+    aboutLabel.textContent = "About the Club";
+
+    const aboutHeading = document.createElement("h2");
+    aboutHeading.textContent = "Club History";
+
+    aboutText.appendChild(aboutLabel);
+    aboutText.appendChild(aboutHeading);
+
+    club.about.forEach(function(paragraph) {
+        addParagraph(aboutText, paragraph);
+    });
+
     const teamImage = document.createElement("img");
-    teamImage.classList.add("club-detail-image");
+    teamImage.classList.add("club-story-image");
     teamImage.src = club.teamImage;
     teamImage.alt = club.name + " team";
 
-    clubArticle.appendChild(teamImage);
-
-    const aboutSection = createSection("About the Club");
-
-    club.about.forEach(function(paragraph) {
-        const text = document.createElement("p");
-        text.textContent = paragraph;
-        aboutSection.appendChild(text);
-    });
+    aboutSection.appendChild(aboutText);
+    aboutSection.appendChild(teamImage);
 
     clubArticle.appendChild(aboutSection);
 
-    const scorerSection = createSection("All-Time Top Scorer");
+
+    // Club information
+
+    const factsSection = document.createElement("section");
+    factsSection.classList.add("club-facts-section");
+
+    const factsHeading = document.createElement("h2");
+    factsHeading.textContent = "Club Information";
+
+    const factsGrid = document.createElement("div");
+    factsGrid.classList.add("club-facts-grid");
+
+    addFact(factsGrid, "Country", club.country);
+    addFact(factsGrid, "City", club.city);
+    addFact(factsGrid, "Founded", club.founded);
+    addFact(factsGrid, "Stadium", club.stadium);
+    addFact(factsGrid, "Colors", club.colors);
+
+    factsSection.appendChild(factsHeading);
+    factsSection.appendChild(factsGrid);
+
+    clubArticle.appendChild(factsSection);
+
+
+    // Top scorer
+
+    const scorerSection = createInfoSection("All-Time Top Scorer");
+
     const scorerText = document.createElement("p");
 
     if (typeof club.topScorer.goals === "number") {
@@ -129,9 +219,13 @@ function displayClubInformation(club, country) {
     }
 
     scorerSection.appendChild(scorerText);
+
     clubArticle.appendChild(scorerSection);
 
-    const trophiesSection = createSection("Major Trophies");
+
+    // Major trophies
+
+    const trophiesSection = createInfoSection("Major Trophies");
     const trophyList = document.createElement("ul");
 
     club.trophies.forEach(function(trophy) {
@@ -139,9 +233,13 @@ function displayClubInformation(club, country) {
     });
 
     trophiesSection.appendChild(trophyList);
+
     clubArticle.appendChild(trophiesSection);
 
-    const ballonDorSection = createSection("Ballon d'Or History");
+
+    // Ballon d'Or history
+
+    const ballonDorSection = createInfoSection("Ballon d'Or History");
     const ballonDorList = document.createElement("ul");
 
     club.ballonDor.forEach(function(winner) {
@@ -149,9 +247,13 @@ function displayClubInformation(club, country) {
     });
 
     ballonDorSection.appendChild(ballonDorList);
+
     clubArticle.appendChild(ballonDorSection);
 
-    const funFactsSection = createSection("Fun Facts");
+
+    // Fun facts
+
+    const funFactsSection = createInfoSection("Fun Facts");
     const funFactsList = document.createElement("ul");
 
     club.funFacts.forEach(function(fact) {
@@ -159,7 +261,9 @@ function displayClubInformation(club, country) {
     });
 
     funFactsSection.appendChild(funFactsList);
+
     clubArticle.appendChild(funFactsSection);
+
 
     exploreContent.appendChild(clubArticle);
 
@@ -170,15 +274,22 @@ function displayClubInformation(club, country) {
     restartButton.onclick = function() {
         displayCountries();
     };
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
-// Displays clubs from the selected country.
+// Displays the four clubs for the selected country.
 function displayClubs(country) {
-    exploreTitle.textContent = country.name + " Clubs";
+    exploreTitle.textContent = "Choose a " + country.name + " Club";
 
     exploreDescription.textContent =
-        "Choose a club to learn more about its history and achievements.";
+        "You selected " +
+        country.name +
+        ". Choose one of the four clubs below to learn about its history, stadium, club information, and major achievements.";
 
     stepLabel.textContent = "Step 2 of 2";
 
@@ -192,6 +303,7 @@ function displayClubs(country) {
 
     country.clubs.forEach(function(club) {
         const clubButton = document.createElement("button");
+
         clubButton.type = "button";
         clubButton.classList.add("club-card");
 
@@ -201,8 +313,8 @@ function displayClubs(country) {
         );
 
         const clubImage = document.createElement("img");
-        clubImage.src = club.teamImage;
-        clubImage.alt = club.name + " team";
+        clubImage.src = club.badge;
+        clubImage.alt = club.name + " badge";
 
         const clubName = document.createElement("h2");
         clubName.textContent = club.name;
@@ -211,9 +323,14 @@ function displayClubs(country) {
         clubCity.textContent =
             club.city + ", " + club.country;
 
+        const viewText = document.createElement("span");
+        viewText.classList.add("club-view-text");
+        viewText.textContent = "View Club →";
+
         clubButton.appendChild(clubImage);
         clubButton.appendChild(clubName);
         clubButton.appendChild(clubCity);
+        clubButton.appendChild(viewText);
 
         clubButton.addEventListener("click", function() {
             displayClubInformation(club, country);
@@ -227,15 +344,20 @@ function displayClubs(country) {
     backButton.onclick = function() {
         displayCountries();
     };
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
-// Displays the countries.
+// Displays the four countries.
 function displayCountries() {
     exploreTitle.textContent = "Choose a Country";
 
     exploreDescription.textContent =
-        "Start exploring European soccer by choosing a country.";
+        "Start exploring European soccer by choosing a country. Your selection will show you four clubs from that country.";
 
     stepLabel.textContent = "Step 1 of 2";
 
@@ -249,6 +371,7 @@ function displayCountries() {
 
     soccerData.countries.forEach(function(country) {
         const countryButton = document.createElement("button");
+
         countryButton.type = "button";
         countryButton.classList.add("country-card");
 
@@ -258,8 +381,7 @@ function displayCountries() {
         );
 
         countryButton.style.backgroundImage =
-            "linear-gradient(rgba(0, 0, 0, 0.45), " +
-            "rgba(0, 0, 0, 0.45)), url('" +
+            "linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('" +
             country.flag +
             "')";
 
@@ -271,8 +393,14 @@ function displayCountries() {
         countryDescription.classList.add("country-description");
         countryDescription.textContent = country.description;
 
+        const exploreText = document.createElement("span");
+        exploreText.classList.add("country-view-text");
+        exploreText.textContent =
+            "Explore " + country.name + " →";
+
         countryButton.appendChild(countryName);
         countryButton.appendChild(countryDescription);
+        countryButton.appendChild(exploreText);
 
         countryButton.addEventListener("click", function() {
             displayClubs(country);
@@ -282,15 +410,22 @@ function displayCountries() {
     });
 
     exploreContent.appendChild(countryGrid);
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
-// Loads the JSON data.
+// Loads the soccer information from the JSON file.
 function loadSoccerData() {
     fetch("data/clubs.json")
         .then(function(response) {
             if (!response.ok) {
-                throw new Error("Soccer data could not be loaded.");
+                throw new Error(
+                    "The soccer data could not be loaded."
+                );
             }
 
             return response.json();
@@ -299,8 +434,7 @@ function loadSoccerData() {
             soccerData = data;
             displayCountries();
         })
-        .catch(function(error) {
-            console.error(error);
+        .catch(function() {
             displayError();
         });
 }
