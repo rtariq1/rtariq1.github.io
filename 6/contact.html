@@ -5,23 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Rehan Tariq">
-    <meta name="description"
-          content="Contact European Soccer Explorer and share your favorite European soccer country, club, and feedback.">
-   <title>Contact | European Soccer Explorer</title>
+    <meta name="description" content="Contact the European Soccer Explorer website.">
 
-    <link rel="icon" type="image/png" sizes="32x32"
-          href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16"
-          href="img/favicon-16x16.png">
+    <title>Contact | European Soccer Explorer</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="shortcut icon" href="img/favicon.ico">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
     <header class="site-header">
-
         <nav class="navbar" aria-label="Main navigation">
 
             <a class="logo" href="index.html">
@@ -29,260 +26,130 @@
             </a>
 
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
-                <li><a href="info.html">Soccer Info</a></li>
-                <li><a class="active" href="contact.html">Contact</a></li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="explore.html">Explore</a>
+                </li>
+
+                <li>
+                    <a href="info.html">Soccer Info</a>
+                </li>
+
+                <li>
+                    <a class="active" href="contact.html">Contact</a>
+                </li>
+
+                <li>
+                    <a href="index.html#login-signup" class="login-link">
+                        Login / Sign Up
+                    </a>
+                </li>
             </ul>
 
         </nav>
-
     </header>
 
 
     <main>
 
-        <!-- Page Heading -->
-        <section class="contact-hero">
+        <section class="choice-section">
 
-            <p class="eyebrow">Get in Touch</p>
+            <div class="choice-heading">
 
-            <h1>Contact Us</h1>
+                <p class="eyebrow">
+                    Contact
+                </p>
 
-            <p>
-                Have a favorite club or want to share your thoughts about
-                European soccer? Use the form below to send your information
-                and feedback.
-            </p>
+                <h1>Contact Us</h1>
+
+                <p>
+                    Have a question or suggestion about the European
+                    Soccer Explorer? Send us a message below.
+                </p>
+
+            </div>
 
         </section>
 
 
-        <!-- Contact Area -->
         <section class="contact-section">
 
-            <!-- Contact Information -->
-            <div class="contact-info">
+            <form class="contact-form">
 
-                <p class="eyebrow">Your Opinion</p>
+                <div class="form-group">
 
-                <h2>Tell Us About Your Soccer Interests</h2>
+                    <label for="name">
+                        Name
+                    </label>
 
-                <p>
-                    European Soccer Explorer was created to make learning
-                    about European soccer clubs simple and organized.
-                    Your feedback can help improve the website and the
-                    information it provides.
-                </p>
-
-                <p>
-                    You can use this form to tell us your favorite country,
-                    favorite club, or anything else you would like to see
-                    added to the website.
-                </p>
-
-
-                <div class="contact-detail">
-
-                    <h3>Countries Featured</h3>
-
-                    <p>
-                        England, Spain, Germany, and Italy
-                    </p>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required>
 
                 </div>
 
 
-                <div class="contact-detail">
+                <div class="form-group">
 
-                    <h3>Clubs Featured</h3>
+                    <label for="email">
+                        Email
+                    </label>
 
-                    <p>
-                        The website currently includes 16 soccer clubs
-                        from four major European soccer countries.
-                    </p>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        required>
 
                 </div>
 
 
-                <div class="contact-detail">
+                <div class="form-group">
 
-                    <h3>Website Purpose</h3>
+                    <label for="message">
+                        Message
+                    </label>
 
-                    <p>
-                        Learn about club history, stadiums, achievements,
-                        legendary players, and European soccer.
-                    </p>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        required></textarea>
 
                 </div>
 
-            </div>
 
+                <button class="button" type="submit">
+                    Send Message
+                </button>
 
-            <!-- Contact Form -->
-            <div class="contact-form-container">
-
-                <h2>Send a Message</h2>
-
-                <p>
-                    Complete the fields below to share your information.
-                </p>
-
-
-                <form class="contact-form" action="#" method="post">
-
-                    <!-- Name -->
-                    <div class="form-group">
-
-                        <label for="name">
-                            Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter your name"
-                            required>
-
-                    </div>
-
-
-                    <!-- Email -->
-                    <div class="form-group">
-
-                        <label for="email">
-                            Email Address
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter your email address"
-                            required>
-
-                    </div>
-
-
-                    <!-- Favorite Country -->
-                    <div class="form-group">
-
-                        <label for="country">
-                            Favorite Soccer Country
-                        </label>
-
-                        <select id="country" name="country">
-
-                            <option value="">
-                                Select a country
-                            </option>
-
-                            <option value="england">
-                                England
-                            </option>
-
-                            <option value="spain">
-                                Spain
-                            </option>
-
-                            <option value="germany">
-                                Germany
-                            </option>
-
-                            <option value="italy">
-                                Italy
-                            </option>
-
-                            <option value="other">
-                                Other
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- Favorite Club -->
-                    <div class="form-group">
-
-                        <label for="club">
-                            Favorite Club
-                        </label>
-
-                        <input
-                            type="text"
-                            id="club"
-                            name="club"
-                            placeholder="Enter your favorite club">
-
-                    </div>
-
-
-                    <!-- Message -->
-                    <div class="form-group">
-
-                        <label for="message">
-                            Message
-                        </label>
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="6"
-                            placeholder="Tell us what you think about the website"
-                            required></textarea>
-
-                    </div>
-
-
-                    <!-- Submit Button -->
-                    <button class="form-button" type="submit">
-                        Send Message
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-
-        <!-- Note -->
-        <section class="form-note">
-
-            <h2>Website Project</h2>
-
-            <p>
-                This contact form is currently part of the static version
-                of European Soccer Explorer. Form information is not being
-                stored yet. Database functionality can be added in a future
-                version of the website.
-            </p>
-
-        </section>
-
-
-        <!-- Explore Callout -->
-        <section class="explore-callout">
-
-            <h2>Keep Exploring</h2>
-
-            <p>
-                Visit the club explorer to learn more about teams from
-                England, Spain, Germany, and Italy.
-            </p>
-
-            <a class="secondary-button" href="explore.html">
-                Explore Soccer Clubs
-            </a>
+            </form>
 
         </section>
 
     </main>
 
 
-    <!-- Footer -->
     <footer class="site-footer">
 
         <p>
