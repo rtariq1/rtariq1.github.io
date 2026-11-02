@@ -1093,3 +1093,148 @@ textarea:focus-visible {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
+/* Login and account page */
+
+.auth-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 950px;
+    margin: 2rem auto;
+}
+
+.auth-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card h2,
+.auth-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.auth-card label {
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 0.85rem;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.auth-card input:focus {
+    outline: 2px solid #222222;
+    outline-offset: 2px;
+}
+
+.auth-card button {
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.google-login {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.google-login p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.google-login button {
+    cursor: pointer;
+}
+
+.auth-message {
+    max-width: 700px;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.auth-message:empty {
+    display: none;
+}
+
+.success-message {
+    background-color: #e8f5e9;
+    border: 1px solid #2e7d32;
+    color: #1b5e20;
+}
+
+.auth-message.error-message {
+    background-color: #ffebee;
+    border: 1px solid #c62828;
+    color: #b71c1c;
+}
+
+#logged-in-account {
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+#password-section,
+#google-password-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #dddddd;
+}
+
+#google-password-section p {
+    margin-bottom: 1.5rem;
+}
+
+.account-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.account-actions a,
+.account-actions button {
+    text-align: center;
+}
+
+#logout-button {
+    cursor: pointer;
+}
+
+
+/* Tablet and desktop */
+
+@media (min-width: 768px) {
+
+    .auth-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+
+    .account-actions {
+        flex-direction: row;
+        align-items: center;
+    }
+}
