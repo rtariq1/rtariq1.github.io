@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rehan Tariq">
+    <meta name="description"
+          content="Login or create an account for European Soccer Explorer.">
+
+    <title>Login | European Soccer Explorer</title>
+
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="img/favicon-32x32.png">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="img/favicon-16x16.png">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="module" src="js/auth.js"></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a class="logo" href="index.html">
+                European Soccer Explorer
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="explore.html">Explore</a>
+                </li>
+
+                <li>
+                    <a href="info.html">Soccer Info</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <li>
+                    <a class="active" href="login.html">
+                        Login / Sign Up
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="introduction">
+
+            <p class="eyebrow">Account</p>
+
+            <h1>Login / Sign Up</h1>
+
+            <p>
+                Login or create an account to access the European
+                Soccer Explorer.
+            </p>
+
+        </section>
+
+
+        <section class="info-section">
+
+            <div id="logged-out-account">
+
+                <div class="auth-grid">
+
+                    <div class="auth-card">
+
+                        <h2>Login</h2>
+
+                        <form id="login-form">
+
+                            <label for="login-email">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="login-email"
+                                required
+                                autocomplete="email">
+
+                            <label for="login-password">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="login-password"
+                                required
+                                autocomplete="current-password">
+
+                            <button
+                                class="primary-button"
+                                type="submit">
+                                Login
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                    <div class="auth-card">
+
+                        <h2>Sign Up</h2>
+
+                        <form id="signup-form">
+
+                            <label for="signup-email">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="signup-email"
+                                required
+                                autocomplete="email">
+
+                            <label for="signup-password">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="signup-password"
+                                minlength="6"
+                                required
+                                autocomplete="new-password">
+
+                            <label for="signup-confirm-password">
+                                Confirm Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="signup-confirm-password"
+                                minlength="6"
+                                required
+                                autocomplete="new-password">
+
+                            <button
+                                class="primary-button"
+                                type="submit">
+                                Create Account
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+                <div class="google-login">
+
+                    <p>Or continue with Google</p>
+
+                    <button
+                        id="google-login-button"
+                        class="secondary-button"
+                        type="button">
+                        Sign in with Google
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="logged-in-account" hidden>
+
+                <div class="auth-card">
+
+                    <p class="eyebrow">
+                        Account
+                    </p>
+
+                    <h2>You Are Logged In</h2>
+
+                    <p>
+                        Signed in as:
+                        <strong id="user-email"></strong>
+                    </p>
+
+                    <p>
+                        You now have access to the full website.
+                    </p>
+
+
+                    <div id="password-section">
+
+                        <h3>Change Password</h3>
+
+                        <form id="password-form">
+
+                            <label for="new-password">
+                                New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="new-password"
+                                minlength="6"
+                                required
+                                autocomplete="new-password">
+
+                            <label for="confirm-new-password">
+                                Confirm New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirm-new-password"
+                                minlength="6"
+                                required
+                                autocomplete="new-password">
+
+                            <button
+                                class="primary-button"
+                                type="submit">
+                                Change Password
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                    <div id="google-password-section" hidden>
+
+                        <h3>Change Password</h3>
+
+                        <p>
+                            This account uses Google Sign-In. You can
+                            manage your password and security settings
+                            directly through your Google Account.
+                        </p>
+
+                        <a
+                            class="primary-button"
+                            href="https://myaccount.google.com/security"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Google Account Security
+                        </a>
+
+                    </div>
+
+
+                    <div class="account-actions">
+
+                        <a
+                            class="primary-button"
+                            href="explore.html">
+                            Start Exploring
+                        </a>
+
+                        <button
+                            id="logout-button"
+                            class="secondary-button"
+                            type="button">
+                            Logout
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p
+                id="auth-message"
+                class="auth-message"
+                role="status"
+                aria-live="polite">
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <p>
+            &copy; 2026 Rehan Tariq | European Soccer Club Explorer
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
