@@ -41,8 +41,10 @@ const authMessage =
 const passwordSection =
     document.getElementById("password-section");
 
-const accountLink =
-    document.getElementById("account-link");
+const googlePasswordSection =
+    document.getElementById(
+        "google-password-section"
+    );
 
 
 function showMessage(message, isError) {
@@ -54,14 +56,19 @@ function showMessage(message, isError) {
     );
 
     if (isError) {
-        authMessage.classList.add("error-message");
+        authMessage.classList.add(
+            "error-message"
+        );
     } else {
-        authMessage.classList.add("success-message");
+        authMessage.classList.add(
+            "success-message"
+        );
     }
 }
 
 
 function getErrorMessage(error) {
+
     if (error.code === "auth/invalid-credential") {
         return "The email or password is incorrect.";
     }
@@ -90,9 +97,11 @@ function getErrorMessage(error) {
 }
 
 
+// Logs in an existing user.
 loginForm.addEventListener(
     "submit",
     function(event) {
+
         event.preventDefault();
 
         const email =
@@ -105,7 +114,10 @@ loginForm.addEventListener(
                 "login-password"
             ).value;
 
-        showMessage("Logging in...", false);
+        showMessage(
+            "Logging in...",
+            false
+        );
 
         signInWithEmailAndPassword(
             auth,
@@ -113,27 +125,33 @@ loginForm.addEventListener(
             password
         )
             .then(function() {
+
                 loginForm.reset();
 
                 showMessage(
                     "Login successful.",
                     false
                 );
+
             })
 
             .catch(function(error) {
+
                 showMessage(
                     getErrorMessage(error),
                     true
                 );
+
             });
     }
 );
 
 
+// Creates a new account.
 signupForm.addEventListener(
     "submit",
     function(event) {
+
         event.preventDefault();
 
         const email =
@@ -152,6 +170,7 @@ signupForm.addEventListener(
             ).value;
 
         if (password !== confirmPassword) {
+
             showMessage(
                 "The passwords do not match.",
                 true
@@ -171,27 +190,33 @@ signupForm.addEventListener(
             password
         )
             .then(function() {
+
                 signupForm.reset();
 
                 showMessage(
                     "Account created successfully.",
                     false
                 );
+
             })
 
             .catch(function(error) {
+
                 showMessage(
                     getErrorMessage(error),
                     true
                 );
+
             });
     }
 );
 
 
+// Signs in with Google.
 googleLoginButton.addEventListener(
     "click",
     function() {
+
         const provider =
             new GoogleAuthProvider();
 
@@ -205,25 +230,31 @@ googleLoginButton.addEventListener(
             provider
         )
             .then(function() {
+
                 showMessage(
                     "Google sign-in successful.",
                     false
                 );
+
             })
 
             .catch(function(error) {
+
                 showMessage(
                     getErrorMessage(error),
                     true
                 );
+
             });
     }
 );
 
 
+// Changes the password for email accounts.
 passwordForm.addEventListener(
     "submit",
     function(event) {
+
         event.preventDefault();
 
         const newPassword =
@@ -240,6 +271,7 @@ passwordForm.addEventListener(
             newPassword !==
             confirmNewPassword
         ) {
+
             showMessage(
                 "The new passwords do not match.",
                 true
@@ -249,6 +281,7 @@ passwordForm.addEventListener(
         }
 
         if (!auth.currentUser) {
+
             showMessage(
                 "You must be logged in to change your password.",
                 true
@@ -267,27 +300,33 @@ passwordForm.addEventListener(
             newPassword
         )
             .then(function() {
+
                 passwordForm.reset();
 
                 showMessage(
                     "Password changed successfully.",
                     false
                 );
+
             })
 
             .catch(function(error) {
+
                 showMessage(
                     getErrorMessage(error),
                     true
                 );
+
             });
     }
 );
 
 
+// Logs the current user out.
 logoutButton.addEventListener(
     "click",
     function() {
+
         showMessage(
             "Logging out...",
             false
@@ -295,54 +334,79 @@ logoutButton.addEventListener(
 
         signOut(auth)
             .then(function() {
+
                 showMessage(
                     "You have been logged out.",
                     false
                 );
+
             })
 
             .catch(function(error) {
+
                 showMessage(
                     getErrorMessage(error),
                     true
                 );
+
             });
     }
 );
 
 
+// Updates the page when authentication changes.
 onAuthStateChanged(
     auth,
     function(user) {
+
         if (user) {
+
             loggedOutAccount.hidden = true;
             loggedInAccount.hidden = false;
 
             userEmail.textContent =
                 user.email || "Google User";
 
-            accountLink.textContent =
-                "Account";
-
             const usesPassword =
                 user.providerData.some(
                     function(provider) {
-                        return provider.providerId ===
-                            "password";
+
+                        return (
+                            provider.providerId ===
+                            "password"
+                        );
+
+                    }
+                );
+
+            const usesGoogle =
+                user.providerData.some(
+                    function(provider) {
+
+                        return (
+                            provider.providerId ===
+                            "google.com"
+                        );
+
                     }
                 );
 
             passwordSection.hidden =
                 !usesPassword;
 
+            googlePasswordSection.hidden =
+                !usesGoogle;
+
         } else {
+
             loggedOutAccount.hidden = false;
             loggedInAccount.hidden = true;
 
             userEmail.textContent = "";
 
-            accountLink.textContent =
-                "Login / Sign Up";
+            passwordSection.hidden = false;
+
+            googlePasswordSection.hidden = true;
         }
     }
 );
