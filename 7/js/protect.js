@@ -5,14 +5,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
 
 
-// Protects pages that require the user to be logged in.
+// Checks the user's login status before allowing access.
 onAuthStateChanged(auth, function(user) {
 
-    if (!user) {
-
-        // Sends logged-out users to the login page.
-        window.location.replace("login.html");
-
+    if (user) {
+        console.log("User is logged in.");
+    } else {
+        window.location.href = "login.html";
     }
 
 });
