@@ -1,3 +1,11 @@
+import { db } from "./firebase-config.js";
+
+import {
+    doc,
+    getDoc
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
+
+
 // Stores the soccer data after it is loaded.
 let soccerData = null;
 
@@ -22,7 +30,9 @@ function moveToTop() {
 // Adds a paragraph to an element.
 function addParagraph(container, text) {
     const paragraph = document.createElement("p");
+
     paragraph.textContent = text;
+
     container.appendChild(paragraph);
 }
 
@@ -33,7 +43,9 @@ function addListItem(list, item) {
 
     if (item.label) {
         const strong = document.createElement("strong");
+
         strong.textContent = item.label + ":";
+
         listItem.appendChild(strong);
 
         listItem.appendChild(
@@ -50,6 +62,7 @@ function addListItem(list, item) {
 // Creates one story section.
 function createStoryRow(label, story, reverse) {
     const row = document.createElement("div");
+
     row.classList.add("story-row");
 
     if (reverse) {
@@ -57,13 +70,16 @@ function createStoryRow(label, story, reverse) {
     }
 
     const text = document.createElement("div");
+
     text.classList.add("story-text");
 
     const eyebrow = document.createElement("p");
+
     eyebrow.classList.add("eyebrow");
     eyebrow.textContent = label;
 
     const heading = document.createElement("h2");
+
     heading.textContent = story.heading;
 
     text.appendChild(eyebrow);
@@ -74,9 +90,11 @@ function createStoryRow(label, story, reverse) {
     });
 
     const imageContainer = document.createElement("div");
+
     imageContainer.classList.add("story-image");
 
     const image = document.createElement("img");
+
     image.src = story.image;
     image.alt = story.imageAlt;
 
@@ -92,32 +110,40 @@ function createStoryRow(label, story, reverse) {
 // Creates the club information section.
 function createFactsSection(club) {
     const section = document.createElement("section");
+
     section.classList.add("club-information");
 
     const headingContainer = document.createElement("div");
+
     headingContainer.classList.add("section-heading");
 
     const eyebrow = document.createElement("p");
+
     eyebrow.classList.add("eyebrow");
     eyebrow.textContent = "Club Details";
 
     const heading = document.createElement("h2");
+
     heading.textContent = "Club Information";
 
     headingContainer.appendChild(eyebrow);
     headingContainer.appendChild(heading);
 
     const grid = document.createElement("div");
+
     grid.classList.add("facts-grid");
 
     club.facts.forEach(function(fact) {
         const card = document.createElement("article");
+
         card.classList.add("fact-card");
 
         const factHeading = document.createElement("h3");
+
         factHeading.textContent = fact.label;
 
         const factValue = document.createElement("p");
+
         factValue.textContent = fact.value;
 
         card.appendChild(factHeading);
@@ -136,29 +162,36 @@ function createFactsSection(club) {
 // Creates an achievement section.
 function createAchievementSection(achievement) {
     const section = document.createElement("section");
+
     section.classList.add("achievements-section");
 
     const headingContainer = document.createElement("div");
+
     headingContainer.classList.add("section-heading");
 
     const eyebrow = document.createElement("p");
+
     eyebrow.classList.add("eyebrow");
     eyebrow.textContent = achievement.eyebrow;
 
     const heading = document.createElement("h2");
+
     heading.textContent = achievement.title;
 
     headingContainer.appendChild(eyebrow);
     headingContainer.appendChild(heading);
 
     const card = document.createElement("div");
+
     card.classList.add("achievements-card");
 
     achievement.blocks.forEach(function(block) {
-
         if (block.type === "subheading") {
-            const subheading = document.createElement("h3");
+            const subheading =
+                document.createElement("h3");
+
             subheading.textContent = block.text;
+
             card.appendChild(subheading);
         }
 
@@ -167,7 +200,8 @@ function createAchievementSection(achievement) {
         }
 
         if (block.type === "list") {
-            const list = document.createElement("ul");
+            const list =
+                document.createElement("ul");
 
             block.items.forEach(function(item) {
                 addListItem(list, item);
@@ -184,8 +218,8 @@ function createAchievementSection(achievement) {
 }
 
 
-// Displays an error if the JSON cannot be loaded.
-function displayError() {
+// Displays an error if the Firestore data cannot be loaded.
+function displayError(errorMessage) {
     exploreContent.innerHTML = "";
 
     exploreTitle.textContent = "Soccer Data Error";
@@ -202,21 +236,28 @@ function displayError() {
         navigationHelp.hidden = true;
     }
 
-    const errorMessage = document.createElement("div");
-    errorMessage.classList.add("error-message");
+    const errorContainer =
+        document.createElement("div");
 
-    const errorHeading = document.createElement("h2");
-    errorHeading.textContent = "Unable to Load Soccer Data";
+    errorContainer.classList.add("error-message");
 
-    const errorText = document.createElement("p");
+    const errorHeading =
+        document.createElement("h2");
+
+    errorHeading.textContent =
+        "Unable to Load Soccer Data";
+
+    const errorText =
+        document.createElement("p");
 
     errorText.textContent =
+        errorMessage ||
         "The soccer information could not be loaded. Please try again later.";
 
-    errorMessage.appendChild(errorHeading);
-    errorMessage.appendChild(errorText);
+    errorContainer.appendChild(errorHeading);
+    errorContainer.appendChild(errorText);
 
-    exploreContent.appendChild(errorMessage);
+    exploreContent.appendChild(errorContainer);
 }
 
 
@@ -240,13 +281,17 @@ function displayClubInformation(club, country) {
 
     exploreContent.innerHTML = "";
 
-    const profile = document.createElement("div");
+    const profile =
+        document.createElement("div");
+
     profile.classList.add("dynamic-club-page");
 
 
     // Introduction and stadium
 
-    const storySection = document.createElement("section");
+    const storySection =
+        document.createElement("section");
+
     storySection.classList.add("club-story");
 
     const introduction = createStoryRow(
@@ -280,12 +325,15 @@ function displayClubInformation(club, country) {
 
     // Scorer, trophies, Ballon d'Or, and fun facts
 
-    club.achievements.forEach(function(achievement) {
-        profile.appendChild(
-            createAchievementSection(achievement)
-        );
-    });
-
+    club.achievements.forEach(
+        function(achievement) {
+            profile.appendChild(
+                createAchievementSection(
+                    achievement
+                )
+            );
+        }
+    );
 
     exploreContent.appendChild(profile);
 
@@ -293,7 +341,9 @@ function displayClubInformation(club, country) {
     // Navigation
 
     backButton.textContent =
-        "← Back to " + country.name + " Clubs";
+        "← Back to " +
+        country.name +
+        " Clubs";
 
     restartButton.textContent =
         "Choose Another Country";
@@ -313,7 +363,9 @@ function displayClubInformation(club, country) {
 // Displays the clubs for the selected country.
 function displayClubs(country) {
     exploreTitle.textContent =
-        "Choose a " + country.name + " Club";
+        "Choose a " +
+        country.name +
+        " Club";
 
     exploreDescription.textContent =
         "You selected " +
@@ -331,40 +383,55 @@ function displayClubs(country) {
 
     exploreContent.innerHTML = "";
 
-    const clubGrid = document.createElement("div");
+    const clubGrid =
+        document.createElement("div");
+
     clubGrid.classList.add("club-grid");
 
     country.clubs.forEach(function(club) {
-        const clubButton = document.createElement("button");
+        const clubButton =
+            document.createElement("button");
 
         clubButton.type = "button";
+
         clubButton.classList.add("club-card");
 
         clubButton.setAttribute(
             "aria-label",
-            "View information about " + club.name
+            "View information about " +
+            club.name
         );
 
 
         // Club badge
 
-        const clubImage = document.createElement("img");
+        const clubImage =
+            document.createElement("img");
 
         clubImage.src = club.badge;
-        clubImage.alt = club.name + " badge";
+        clubImage.alt =
+            club.name + " badge";
 
 
         // Club name
 
-        const clubName = document.createElement("h2");
+        const clubName =
+            document.createElement("h2");
+
         clubName.textContent = club.name;
 
 
         // View club text
 
-        const viewText = document.createElement("span");
-        viewText.classList.add("club-view-text");
-        viewText.textContent = "View Club →";
+        const viewText =
+            document.createElement("span");
+
+        viewText.classList.add(
+            "club-view-text"
+        );
+
+        viewText.textContent =
+            "View Club →";
 
 
         clubButton.appendChild(clubImage);
@@ -404,7 +471,8 @@ function displayClubs(country) {
 
 // Displays the countries.
 function displayCountries() {
-    exploreTitle.textContent = "Choose a Country";
+    exploreTitle.textContent =
+        "Choose a Country";
 
     exploreDescription.textContent =
         "Start exploring European soccer by choosing a country. Your selection will show you four clubs from that country.";
@@ -420,119 +488,188 @@ function displayCountries() {
 
     exploreContent.innerHTML = "";
 
-    const countryGrid = document.createElement("div");
-    countryGrid.classList.add("country-grid");
+    const countryGrid =
+        document.createElement("div");
 
-    soccerData.countries.forEach(function(country) {
-        const countryButton =
-            document.createElement("button");
+    countryGrid.classList.add(
+        "country-grid"
+    );
 
-        countryButton.type = "button";
-        countryButton.classList.add("country-card");
+    soccerData.countries.forEach(
+        function(country) {
+            const countryButton =
+                document.createElement(
+                    "button"
+                );
 
-        countryButton.setAttribute(
-            "aria-label",
-            "Explore soccer clubs from " +
-            country.name
-        );
+            countryButton.type =
+                "button";
 
+            countryButton.classList.add(
+                "country-card"
+            );
 
-        // Country flag background
-
-        countryButton.style.backgroundImage =
-            "linear-gradient(" +
-            "rgba(0, 0, 0, 0.45), " +
-            "rgba(0, 0, 0, 0.45)" +
-            "), url('" +
-            country.flag +
-            "')";
-
-
-        // Country name
-
-        const countryName =
-            document.createElement("span");
-
-        countryName.classList.add("country-name");
-        countryName.textContent = country.name;
+            countryButton.setAttribute(
+                "aria-label",
+                "Explore soccer clubs from " +
+                country.name
+            );
 
 
-        // Country description
+            // Country flag background
 
-        const countryDescription =
-            document.createElement("span");
-
-        countryDescription.classList.add(
-            "country-description"
-        );
-
-        countryDescription.textContent =
-            country.description;
+            countryButton.style.backgroundImage =
+                "linear-gradient(" +
+                "rgba(0, 0, 0, 0.45), " +
+                "rgba(0, 0, 0, 0.45)" +
+                "), url('" +
+                country.flag +
+                "')";
 
 
-        // Explore text
+            // Country name
 
-        const exploreText =
-            document.createElement("span");
+            const countryName =
+                document.createElement(
+                    "span"
+                );
 
-        exploreText.classList.add(
-            "country-view-text"
-        );
+            countryName.classList.add(
+                "country-name"
+            );
 
-        exploreText.textContent =
-            "Explore " +
-            country.name +
-            " →";
-
-
-        countryButton.appendChild(countryName);
-        countryButton.appendChild(
-            countryDescription
-        );
-
-        countryButton.appendChild(exploreText);
+            countryName.textContent =
+                country.name;
 
 
-        // Changes the DOM to show the clubs.
+            // Country description
 
-        countryButton.addEventListener(
-            "click",
-            function() {
-                displayClubs(country);
-            }
-        );
+            const countryDescription =
+                document.createElement(
+                    "span"
+                );
 
-        countryGrid.appendChild(countryButton);
-    });
+            countryDescription.classList.add(
+                "country-description"
+            );
 
-    exploreContent.appendChild(countryGrid);
+            countryDescription.textContent =
+                country.description;
+
+
+            // Explore text
+
+            const exploreText =
+                document.createElement(
+                    "span"
+                );
+
+            exploreText.classList.add(
+                "country-view-text"
+            );
+
+            exploreText.textContent =
+                "Explore " +
+                country.name +
+                " →";
+
+
+            countryButton.appendChild(
+                countryName
+            );
+
+            countryButton.appendChild(
+                countryDescription
+            );
+
+            countryButton.appendChild(
+                exploreText
+            );
+
+
+            // Changes the DOM to show the clubs.
+
+            countryButton.addEventListener(
+                "click",
+                function() {
+                    displayClubs(country);
+                }
+            );
+
+            countryGrid.appendChild(
+                countryButton
+            );
+        }
+    );
+
+    exploreContent.appendChild(
+        countryGrid
+    );
 
     moveToTop();
 }
 
 
-// Loads the soccer information from the JSON file.
-function loadSoccerData() {
-    fetch("data/clubs.json")
-        .then(function(response) {
+// Shows feedback while Firestore is loading.
+function displayLoadingMessage() {
+    exploreContent.innerHTML = "";
 
-            if (!response.ok) {
+    const loadingMessage =
+        document.createElement("p");
+
+    loadingMessage.classList.add(
+        "loading-message"
+    );
+
+    loadingMessage.textContent =
+        "Loading soccer data...";
+
+    loadingMessage.setAttribute(
+        "role",
+        "status"
+    );
+
+    loadingMessage.setAttribute(
+        "aria-live",
+        "polite"
+    );
+
+    exploreContent.appendChild(
+        loadingMessage
+    );
+}
+
+
+// Loads the soccer information from Cloud Firestore.
+function loadSoccerData() {
+    displayLoadingMessage();
+
+    const soccerDocument =
+        doc(
+            db,
+            "soccerData",
+            "main"
+        );
+
+    getDoc(soccerDocument)
+        .then(function(documentSnapshot) {
+            if (!documentSnapshot.exists()) {
                 throw new Error(
-                    "The soccer data could not be loaded."
+                    "Soccer data was not found in Firebase."
                 );
             }
 
-            return response.json();
-        })
-
-        .then(function(data) {
-            soccerData = data;
+            soccerData =
+                documentSnapshot.data();
 
             displayCountries();
         })
 
-        .catch(function() {
-            displayError();
+        .catch(function(error) {
+            displayError(
+                "The soccer information could not be loaded from Firebase. " +
+                error.message
+            );
         });
 }
 
