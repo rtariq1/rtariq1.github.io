@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rehan Tariq">
+    <meta name="description" content="Interactively explore European soccer clubs from England, Spain, Germany, and Italy.">
+
+    <title>Explore Clubs | European Soccer Explorer</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a class="logo" href="index.html">
+                European Soccer Explorer
+            </a>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a class="active" href="explore.html">Explore</a>
+                </li>
+
+                <li>
+                    <a href="info.html">Soccer Info</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <li>
+                    <a href="#" class="login-link">Login / Sign Up</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="choice-section">
+
+            <div class="choice-heading">
+                <p class="eyebrow" id="step-label">
+                    Step 1 of 2
+                </p>
+
+                <h1 id="explore-title">
+                    Choose a Country
+                </h1>
+
+                <p id="explore-description">
+                    Start exploring European soccer by choosing a country.
+                    Your selection will show you four clubs from that country.
+                </p>
+            </div>
+
+
+            <!-- JavaScript will place the countries, clubs,
+                 and final club information inside this container. -->
+
+            <div id="explore-content" aria-live="polite">
+
+                <div class="loading-message">
+                    <p>Loading soccer information...</p>
+                </div>
+
+            </div>
+
+
+            <!-- JavaScript controls these navigation buttons. -->
+
+            <div class="dynamic-navigation">
+
+                <button
+                    id="back-button"
+                    class="back-button"
+                    type="button"
+                    hidden>
+                    &larr; Back
+                </button>
+
+                <button
+                    id="restart-button"
+                    class="back-button"
+                    type="button"
+                    hidden>
+                    Choose Another Country
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="navigation-help" id="navigation-help">
+
+            <h2>How It Works</h2>
+
+            <p>
+                First, choose a country. Next, choose one of the four clubs
+                from that country. The final selection will display information
+                about the club, including its history, stadium, achievements,
+                top scorer, and other facts.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <p>
+            &copy; 2026 Rehan Tariq | European Soccer Club Explorer
+        </p>
+    </footer>
+
+</body>
+
+</html>
