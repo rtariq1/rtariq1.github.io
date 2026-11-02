@@ -7,7 +7,8 @@
     <meta name="author" content="Rehan Tariq">
     <meta name="description"
           content="Contact European Soccer Explorer and share your favorite European soccer country, club, and feedback.">
-   <title>Contact | European Soccer Explorer</title>
+
+    <title>Contact | European Soccer Explorer</title>
 
     <link rel="icon" type="image/png" sizes="32x32"
           href="img/favicon-32x32.png">
@@ -17,11 +18,11 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script type="module" src="js/protect.js"></script>
+    <script type="module" src="js/contact.js"></script>
 </head>
 
 <body>
 
-    <!-- Navigation -->
     <header class="site-header">
 
         <nav class="navbar" aria-label="Main navigation">
@@ -35,7 +36,7 @@
                 <li><a href="explore.html">Explore</a></li>
                 <li><a href="info.html">Soccer Info</a></li>
                 <li><a class="active" href="contact.html">Contact</a></li>
-                <li><a href="index.html#login-signup">Login / Sign Up</a></li>
+                <li><a href="login.html">Account</a></li>
             </ul>
 
         </nav>
@@ -45,7 +46,6 @@
 
     <main>
 
-        <!-- Page Heading -->
         <section class="contact-hero">
 
             <p class="eyebrow">Get in Touch</p>
@@ -61,10 +61,8 @@
         </section>
 
 
-        <!-- Contact Area -->
         <section class="contact-section">
 
-            <!-- Contact Information -->
             <div class="contact-info">
 
                 <p class="eyebrow">Your Opinion</p>
@@ -122,7 +120,6 @@
             </div>
 
 
-            <!-- Contact Form -->
             <div class="contact-form-container">
 
                 <h2>Send a Message</h2>
@@ -132,9 +129,10 @@
                 </p>
 
 
-                <form class="contact-form" action="#" method="post">
+                <form
+                    id="contact-form"
+                    class="contact-form">
 
-                    <!-- Name -->
                     <div class="form-group">
 
                         <label for="name">
@@ -151,7 +149,6 @@
                     </div>
 
 
-                    <!-- Email -->
                     <div class="form-group">
 
                         <label for="email">
@@ -168,36 +165,37 @@
                     </div>
 
 
-                    <!-- Favorite Country -->
                     <div class="form-group">
 
                         <label for="country">
                             Favorite Soccer Country
                         </label>
 
-                        <select id="country" name="country">
+                        <select
+                            id="country"
+                            name="country">
 
                             <option value="">
                                 Select a country
                             </option>
 
-                            <option value="england">
+                            <option value="England">
                                 England
                             </option>
 
-                            <option value="spain">
+                            <option value="Spain">
                                 Spain
                             </option>
 
-                            <option value="germany">
+                            <option value="Germany">
                                 Germany
                             </option>
 
-                            <option value="italy">
+                            <option value="Italy">
                                 Italy
                             </option>
 
-                            <option value="other">
+                            <option value="Other">
                                 Other
                             </option>
 
@@ -206,7 +204,6 @@
                     </div>
 
 
-                    <!-- Favorite Club -->
                     <div class="form-group">
 
                         <label for="club">
@@ -222,7 +219,6 @@
                     </div>
 
 
-                    <!-- Message -->
                     <div class="form-group">
 
                         <label for="message">
@@ -239,10 +235,20 @@
                     </div>
 
 
-                    <!-- Submit Button -->
-                    <button class="form-button" type="submit">
+                    <button
+                        id="contact-submit"
+                        class="form-button"
+                        type="submit">
                         Send Message
                     </button>
+
+
+                    <p
+                        id="contact-status"
+                        class="contact-status"
+                        role="status"
+                        aria-live="polite">
+                    </p>
 
                 </form>
 
@@ -251,22 +257,18 @@
         </section>
 
 
-        <!-- Note -->
         <section class="form-note">
 
-            <h2>Website Project</h2>
+            <h2>Your Feedback Matters</h2>
 
             <p>
-                This contact form is currently part of the static version
-                of European Soccer Explorer. Form information is not being
-                stored yet. Database functionality can be added in a future
-                version of the website.
+                Your message will be securely submitted and stored
+                so your feedback can be reviewed.
             </p>
 
         </section>
 
 
-        <!-- Explore Callout -->
         <section class="explore-callout">
 
             <h2>Keep Exploring</h2>
@@ -285,7 +287,6 @@
     </main>
 
 
-    <!-- Footer -->
     <footer class="site-footer">
 
         <p>
